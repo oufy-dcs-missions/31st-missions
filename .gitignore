@@ -3,6 +3,7 @@ luac.out
 
 # luarocks build files
 *.src.rock
+*.zip
 *.tar.gz
 
 # Object files
@@ -38,13 +39,7 @@ luac.out
 *.x86_64
 *.hex
 
-<<<<<<< HEAD
-/31st_missions.iml
-/.idea/
-/Scripts/dev-dependencies/
-=======
 *.log*
 .buildpath
 .project
 .settings/
->>>>>>> master
