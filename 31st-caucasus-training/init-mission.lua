@@ -121,12 +121,12 @@ redA2ADispatcherLand:SetSquadronGci("AnapaGCI",500,2000)
 
 --BlueA2A Defenses
 zoneGeorgianDefend = ZONE_POLYGON:New( "BorderBlue", GROUP:FindByName( "BorderBlue" ) )
-zoneCVW7FleetDefend = ZONE_POLYGON:New( "CVW_Defend", GROUP:FindByName( "CVW_Defend" ) )
+zoneCVW8FleetDefend = ZONE_POLYGON:New( "CVW_Defend", GROUP:FindByName( "CVW_Defend" ) )
 
 
 
 DetectionBlueSetGroup = SET_GROUP:New()
-DetectionBlueSetGroup:FilterPrefixes( { "EWR_BLUE", "CVW-7", "BlueAwacs" } )
+DetectionBlueSetGroup:FilterPrefixes( { "EWR_BLUE", "CVW-8", "BlueAwacs" } )
 DetectionBlueSetGroup:FilterStart()
 
 blueDetection = DETECTION_AREAS:New( DetectionBlueSetGroup, 20000 )
@@ -134,7 +134,7 @@ blueDetection = DETECTION_AREAS:New( DetectionBlueSetGroup, 20000 )
 
 blueA2ADispatcher = AI_A2A_DISPATCHER:New( blueDetection )
 
-blueA2ADispatcher:SetBorderZone( {zoneGeorgianDefend, zoneCVW7FleetDefend} )
+blueA2ADispatcher:SetBorderZone( {zoneGeorgianDefend, zoneCVW8FleetDefend} )
 
 blueA2ADispatcher:SetEngageRadius( 200000 )
 blueA2ADispatcher:SetDefaultOverhead(1.4)
@@ -149,12 +149,9 @@ blueA2ADispatcher:SetDefaultGrouping(2)
 blueA2ADispatcher:SetDefaultTanker("texaco")
 blueA2ADispatcher:SetCommandCenter(blueCommandCenter)
 
-
-
-
-blueA2ADispatcher:SetSquadron( "STNCAP", "Bush", { "blueFleetCAP"}, 10 )
-blueA2ADispatcher:SetSquadronCap( "STNCAP", zoneCVW7FleetDefend, 20000,35000,500,900,500,2000,"BARO")
-blueA2ADispatcher:SetSquadron( "STNIntercept", "Bush", { "blueFleetIntercept"}, 4 )
+blueA2ADispatcher:SetSquadron( "STNCAP", "Stennis", { "blueFleetCAP"}, 10 )
+blueA2ADispatcher:SetSquadronCap( "STNCAP", zoneCVW8FleetDefend, 20000,35000,500,900,500,2000,"BARO")
+blueA2ADispatcher:SetSquadron( "STNIntercept", "Stennis", { "blueFleetIntercept"}, 4 )
 blueA2ADispatcher:SetSquadronGrouping("STNIntercept",2)
 blueA2ADispatcher:SetSquadronGci("STNIntercept",500,2000)
 blueA2ADispatcher:SetSquadron("BatumiCAP",AIRBASE.Caucasus.Batumi,{"blueLandCAP17","blueLandCAP16"},6)
@@ -168,4 +165,5 @@ blueA2ADispatcher:SetSquadronCap( "KutaisiCAP", zoneGeorgianDefend, 20000,35000,
 
 
 spawnUSAF = SPAWN:New("F15E_Escort"):InitLimit(16,16):InitSkill("Excellent"):SpawnScheduled(1200,0.5)
+spawnGalaxy = SPAWN:New("C5"):InitLimit(5,5):InitSkill("Excellent"):SpawnScheduled(10,1)
 --spawnUSAF:SpawnScheduled(15,1)
