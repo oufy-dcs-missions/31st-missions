@@ -1,3 +1,18 @@
+env.info("mission initialization...")
+
+--Download the turkish F16 livery https://www.digitalcombatsimulator.com/en/files/3306644/
+--Download the RazGriz JF17 livery https://www.digitalcombatsimulator.com/en/files/3307267/
+
+blueCommandCenter = COMMANDCENTER:New( GROUP:FindByName( "CIA_HQ" ), "CIA_HQ" )
+--blueCommandCenter:TraceOff()
+
+
+--SEAD Objects
+SEAD_RED_SAM_Defenses = SEAD:New( { 'SA6_Sochi', 'SA10_Gelend', 'SA10_Nalchik'} )
+SEAD_BLUE_SAM_Defenses = SEAD:New( { 'PAtriot_Sukhumi', 'Patriot_Sochi', 'Patriot_Tbilisi', 'Hawk_Senaki'} )
+
+
+
 function spawnEscortInZone(escortTemplate, popupZone, escortedGroup, escortFreq, skill, agressive)
   if not(escortedGroup) then
     BASE:E("spawnEscortInZone(): group " + escortedGroup + " not found !!!")
@@ -132,12 +147,14 @@ blueA2ADispatcher:SetDefaultFuelThreshold(0.4)
 blueA2ADispatcher:SetGciRadius(600000)
 blueA2ADispatcher:SetDefaultGrouping(2)
 blueA2ADispatcher:SetDefaultTanker("texaco")
+blueA2ADispatcher:SetCommandCenter(blueCommandCenter)
 
 
 
-blueA2ADispatcher:SetSquadron( "STNCAP", "Stennis", { "blueFleetCAP"}, 10 )
+
+blueA2ADispatcher:SetSquadron( "STNCAP", "Bush", { "blueFleetCAP"}, 10 )
 blueA2ADispatcher:SetSquadronCap( "STNCAP", zoneCVW7FleetDefend, 20000,35000,500,900,500,2000,"BARO")
-blueA2ADispatcher:SetSquadron( "STNIntercept", "Stennis", { "blueFleetIntercept"}, 4 )
+blueA2ADispatcher:SetSquadron( "STNIntercept", "Bush", { "blueFleetIntercept"}, 4 )
 blueA2ADispatcher:SetSquadronGrouping("STNIntercept",2)
 blueA2ADispatcher:SetSquadronGci("STNIntercept",500,2000)
 blueA2ADispatcher:SetSquadron("BatumiCAP",AIRBASE.Caucasus.Batumi,{"blueLandCAP17","blueLandCAP16"},6)
@@ -148,3 +165,7 @@ blueA2ADispatcher:SetSquadron("TbilisiCAP",AIRBASE.Caucasus.Tbilisi_Lochini,{"bl
 blueA2ADispatcher:SetSquadronCap( "TbilisiCAP", zoneGeorgianDefend, 20000,35000,500,900,500,2000,"BARO")
 blueA2ADispatcher:SetSquadron("KutaisiCAP",AIRBASE.Caucasus.Kutaisi,{"blueLandCAP17", "blueLandCAP16"},6)
 blueA2ADispatcher:SetSquadronCap( "KutaisiCAP", zoneGeorgianDefend, 20000,35000,500,900,500,2000,"BARO")
+
+
+spawnUSAF = SPAWN:New("F15E_Escort"):InitLimit(16,16):InitSkill("Excellent"):SpawnScheduled(1200,0.5)
+--spawnUSAF:SpawnScheduled(15,1)
