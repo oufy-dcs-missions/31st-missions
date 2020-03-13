@@ -1,0 +1,21 @@
+En attendant pour ce matin, nous avons 2 opérations au planning :
+
+* Le groupe de Viper "Super" ira en reconnaissance sur un site SA6 dans la région de Sochi. Son objectif est de déterminer l'ensemble des menaces sur zone de manière à préparer une frappe efficace si la situation politique devait dégénérer.
+* Les groupes "Felix" et "Stinger" décolleront du Bush pour arriver un peu en avance en Géorgie et préparer notre installation et la collaboration à mettre en place avec les forces Géorgiennes et Turques. Leur mission en chemin sera :
+    1 d'assurer la sécurité aérienne au dessus des côtes Nord de la Turquie
+    2 garantir la sécurité du groupe aéronaval et transit
+    3 Gauger un peu le niveau d'agressivité de la défense aérienne Russe qui couvre la partie Nord de la mer noire.
+
+Take-Off: 0430Z
+ROE: Weapons hold
+METAR: LTBA 120320Z 36003KT CAVOK 07/06 Q1020 NOSIG RMK RWY17L 34003KT RWY05 00000KT RWY23 VRB02KT
+
+Resources :
+Texaco : KC135MPRS TACAN: 15Y Freq:Olive1
+Arco: KC10 TACAN: 16Y Freq: Olive2
+
+E3 - Darkstar Freq: Silver1
+E2 - Focus Freq: Silver2
+
+Bush    : ICLS: 17 TACAN: 74X Freq: Black1
+Stennis : ICLS: 18 TACAN: 75X Freq: Black6
