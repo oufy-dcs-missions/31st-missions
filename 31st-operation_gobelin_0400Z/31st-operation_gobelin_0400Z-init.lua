@@ -1,6 +1,9 @@
 env.info("mission initialization...")
 
-blueCommandCenter = COMMANDCENTER:New( GROUP:FindByName( "CIA_HQ" ), "CIA_HQ" )
+--Download the turkish F16 livery https://www.digitalcombatsimulator.com/en/files/3306644/
+--Download the RazGriz JF17 livery https://www.digitalcombatsimulator.com/en/files/3307267/
+
+--blueCommandCenter = COMMANDCENTER:New( GROUP:FindByName( "CIA_HQ" ), "CIA_HQ" )
 --blueCommandCenter:TraceOff()
 
 
@@ -162,5 +165,5 @@ blueA2ADispatcher:SetSquadronCap( "KutaisiCAP", zoneGeorgianDefend, 20000,35000,
 
 
 spawnUSAF = SPAWN:New("F15E_Escort"):InitLimit(16,16):InitSkill("Excellent"):SpawnScheduled(1200,0.5)
-spawnGalaxy = SPAWN:New("C5"):InitLimit(5,5):InitSkill("Excellent"):SpawnScheduled(10,1)
+spawnGalaxy = SPAWN:New("C5"):InitLimit(5,5):InitSkill("Excellent"):SpawnScheduled(180,0.5)
 --spawnUSAF:SpawnScheduled(15,1)
