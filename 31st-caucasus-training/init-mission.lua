@@ -1,8 +1,5 @@
 env.info("mission initialization...")
 
---Download the turkish F16 livery https://www.digitalcombatsimulator.com/en/files/3306644/
---Download the RazGriz JF17 livery https://www.digitalcombatsimulator.com/en/files/3307267/
-
 blueCommandCenter = COMMANDCENTER:New( GROUP:FindByName( "CIA_HQ" ), "CIA_HQ" )
 --blueCommandCenter:TraceOff()
 
