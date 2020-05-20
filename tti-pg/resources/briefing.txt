@@ -1,0 +1,217 @@
+﻿Mission dynamique PvE basé sur le template de la 107th.
+
+Waypoints pour les missions disponibles pour :
+F/A-18C, AV-8B, A-10C, and M-2000C
+
+Les waypoints des missions actives sont notées dans le Intel Reports dans le menu F10.
+
+BULLSEYE sur waypoint 1
+
+Module AIRBOSS disponible pour les Porte-avions
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+______________
+
+Utilisez le menu radio pour trouver les missions en cours
+
+______________
+
+Resources:
+AWACS:
+"Overlord" E-3A - Silver1
+
+Tankers:
+KC-10 “Texaco” Olive1 41Y
+KC-135 “Arco” Olive2 39Y
+KC-135 MPRS “Shell” Olive3 40Y
+
+AIRBOSS Stennis Tanker S-3B “Arco” Olive2 32Y 
+AIRBOSS Bush Tanker S-3B "Shell" Olive3 31Y 
+
+Porte-avions:
+LHS-1 Tarawa - 42X TCN Black1
+
+CVN-74 Stennis - 75X TCN
+CRS: Varies (Click on unit while in-game to find HEADING)
+ATC: Black1
+ICLS - 18
+
+CVN-77 Bush - 74X TCN
+CRS: Varies (Click on unit while in-game to find HEADING)
+ATC: Black6
+ICLS - 17
+Module airboss activé : le porte avion se mettra face au vent si vous le demandez par menu radio :
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+
+______________
+
+Missions disponibles:
+
+Air-Air - Spawn un groupe de chasseurs énemis. Plusieurs difficultés disponibles. Attention à ne pas spwaner trop d'avions énemis !
+
+Air-Sol - La mission génèrera un groupe de cibles au sol dans un endroit aléatoire. Plusieurs difficultés à choisir :
+
+HARD - SAMs possibles.
+EASY (Multirole) - Cibles non défendues.
+Helo - Missions proches de Al Minhad.
+Helo Infantry Assault - Missions de transport de troupes ou appui-feu héliporté.
+Anti-Ship - Fera spawner dans un endroit aléatoire un groupe de bateaux énemis.
+
+______________
+
+Autre options du menu F10:
+
+EWRS - Système de reporting AWACS.
+
+JTAC Status - script de FAC automatique de la librairies CTLD. 
+
+Intel Menu - Pour les avions les plus anciens, système permettant de marquer au fumigène les cibles.
+
+Debug Menu - Permet de restarter les AWACS et Tankers si besoin.
+
+AIRBOSS Menu - Système de la librairie MOOSE de gestion "Carrier-Ops" : toujours ca de pris en attendant le SuperCarrier :)
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+
+______________
+
+Couleur fumigènes
+
+blanche: Marquage Cible Sol
+rouge: Cible marquée et lasée par JTAC (Utilisez le menu F10 pour obtenir le code laser du JTAC)
+verte: Zone de chargement/déchargement de cargo/troupe
+
+______________
+
+Menu CTLD pour hélico:
+
+Pickup zones marquées par fumée verte.
+Utilisation obligatoire de cable pour le transport
+______________
+
+"ZEUS" MAP MARKER SPAWNS AND COMMANDS:
+Vous pouvez faire spawner des unitées à l'emplacement désiré avec le menu F10, comme le mode Zeus d'Arma3.
+
+Création d'unité:
+1) Ajouter un marqueur sur la vue F10. NE TAPEZ RIEN POUR L INSTANT !
+
+2) Tapez "-create [Nom de l'unité (cf liste ci dessous)]" N APPUYEZ PAR SUR ENTREE.
+Example "-create f14_red" créera un élément REDFOR F-14 IA
+"jtac" et "abrams" sont des unités alliées à utiliser avec Combined Arms. Utilisez JTAC pour faire spawner n'importe ou un Humvee et en prendre le contrôle pour de la coopération !
+
+Unités disponibles :
+
+-- Unité rouges
+f5_red
+f4_red
+f14_red
+f16_red
+f15_red
+m2000_red
+su30_red
+su33_red
+su27_red
+mig21_red
+mig29_red
+drone_red
+mig23_red
+mig31_red
+tu142_red
+tu160_red
+tu22m3_red
+tu95ms_red
+
+ah1w_red
+ah64a_red
+ah64d_red
+ah1w_red
+sa342mistral_red
+mi24v_red
+oh58d_red
+
+abrams_red
+t80_red
+bmp_red
+truck_red
+armor_group_red
+infantry_group_red
+
+tanker_ship_red
+type052b_ship_red
+type052c_ship_red
+type054a_ship_red
+grisha_ship_red
+moskva_ship_red
+neus_ship_red
+ssk_ship_red
+
+
+s10_red
+s11_red
+s3_red
+s2_red
+s6_red
+ural_red
+shilka_red
+strella_red
+osa_red
+tunguska_red
+tor_red
+buk_red
+igla_manpads_red
+t90_red
+
+-- Unités bleues
+f5_blue
+f4_blue
+f14_blue
+f16_blue
+f15_blue
+m2000_blue
+su27_blue
+mig21_blue
+mig29_blue
+drone_blue
+mig23_blue
+b1b_blue 
+b52_blue 
+f11a_blue
+
+ah1w_blue
+ah64a_blue
+ah64d_blue
+ah1w_blue
+sa342mistral_blue
+mi24v_blue
+oh58d_blue
+
+abrams_blue
+t80_blue
+bmp_blue
+truck_blue
+armor_group_blue
+infantry_group_blue
+jtac --> Drone Reaper AI
+
+hmv --> Hummer à utiliser avec CombinedArms
+
+hawk_blue
+patriot_blue
+avenger_blue
+linebacker_blue
+stinger_manpads_blue
+chaparral_blue
+vulcan_blue
+
+tanker_ship_blue
+type052b_ship_blue
+type052c_ship_blue
+type054a_ship_blue
+oliver_ship_blue
+ticonderoga_ship_blue
+
+3) Une fois la commande tapée, cliquez sur le X du marqueur pour lancer le spawn de l'unité.
+
+
+Destruction d'unité:
+1) Créez un marqueur sur la vue F10 sur l'unité que vous voulez detruire. NE TAPEZ RIEN POUR L INSTANT
+
+2) Tapez "-destroy" et cliquer sur le X du marqueur pour nettoyer les alentours du marqueur (ne fonctionne que pour les unités au sol ou les bateaux).

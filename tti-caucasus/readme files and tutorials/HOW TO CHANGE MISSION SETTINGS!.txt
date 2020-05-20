@@ -1,0 +1,184 @@
+HOW TO CHANGE MISSION SETTINGS:
+
+
+GO TO THE TRIGGER LIST IN THE MISSION EDITOR (3rd icon under MIS on the LEFT PANEL)
+
+On the FIRST TRIGGER, look in ACTIONS > DO SCRIPT.
+
+There you can edit the number values for adjusting the mission properties.
+
+AFTER EDITING, SAVE MISSION!!!!!
+
+DO NOT CHANGE ANYTHING EXCEPT FOR THE NUMBER VALUES!!!
+
+This is what each setting does:
+
+
+a2g_easy_autostart = SET TRUE OR FALSE if you want A2G Easy missions auto-spawning (will start automatically if there are no other a2g  hard missions active)
+a2g_hard_autostart = SET TRUE OR FALSE  if you want A2G Hard missions auto-spawning (will start automatically if there are no other a2g hard missions active)
+a2g_helo_autostart = SET TRUE OR FALSE  if you want A2G helo missions auto-spawning (will start automatically if there are no other a2g helo missions active)
+a2g_helo_inf_autostart = SET TRUE OR FALSE  if you want A2G helo infantry missions auto-spawning (will start automatically if there are no other a2g helo infantry assault missions active)
+antiship_autostart = SET TRUE OR FALSE  if you want anti-ship missions auto-spawning (will start automatically if there are no other a2g missions active)
+
+
+
+
+a2a_autospawn_enable = SET TRUE OR FALSE if you want random enemy A2A spawns 
+a2a_intercept_autospawn_enable = SET TRUE OR FALSE if you want random enemy bomber spawns  
+a2a_helo_autospawn_enable = SET TRUE OR FALSE if you want random enemy helo spawns  
+
+a2a_respawn_time_min = 5
+a2a_respawn_time_max = 20
+a2a_intercept_respawn_time_min = 1680
+a2a_intercept_respawn_time_max = 3420
+a2a_helo_respawn_time_min = 1680
+a2a_helo_respawn_time_max = 3420
+(TIME IN SECONDS)
+for a dynamic spawn time choose a minimum and maximum time between spawns or make them the same if you want a static time between spawns.
+
+
+sam_enable = SET TRUE OR FALSE DEPENDING ON IF YOU WANT THERE TO BE RANDOM SAM SITES SPAWNING ON THE MAP OUTSIDE OF MISSION ZONES 
+sam_site_jtacs_enable = SET TRUE OR FALSE IF YOU WANT JTACS THAT LASE/SMOKE AT THE RANDOM SAM SITES
+sam_respawn_time = TIME IN SECONDS BETWEEN RANDOM SAM SITE SPAWN
+
+jtac_smokes_targets = SET TRUE OR FALSE IF YOU WANT JTACS TO SMOKE LASED TARGETS!
+
+enemy_ship_ai = SET TRUE OR FALSE if you want enemy AI ships to attack/defend or do nothing.
+
+________________
+
+You can set the number to 0 if you do not want that unit type at these missions.
+
+a2g_hard_misc = how many MISC ground units (armor, unarmed, etc...) will spawn at a2g HARD
+a2g_hard_aa = how many Anti Air ground units (shilka, ural AAA, soft single unit SAM like tunguska, osa) will spawn at a2g HARD
+a2g_hard_sam = how many SAM ground units (armor, unarmed, etc...) will spawn at a2g HARD
+
+a2g_easy_misc = how many MISC ground units (armor, unarmed, etc...) will spawn at a2g EASY
+a2g_easy_aa = how many Anti Air ground units (shilka, ural AAA, soft single unit SAM like tunguska, osa) will spawn at a2g EASY
+a2g_easy_sam = how many SAM ground units (armor, unarmed, etc...) will spawn at a2g EASY
+
+a2g_helo_misc = how many MISC ground units (armor, unarmed, etc...) will spawn at a2g HELO
+a2g_helo_aa = how many Anti Air ground units (shilka, ural AAA, soft single unit SAM like tunguska, osa) will spawn at a2g HELO
+
+a2g_inf_troops = how many infantry ground units (troops) will spawn at a2g INFANTRY ASSAULT
+a2g_inf_misc = how many MISC ground units (armor, unarmed, etc...) will spawn at a2g INFANTRY ASSAULT
+
+
+___________
+
+CHANGING RANDOM AI AIR TRAFFIC SETTINGS:
+
+random_civ_air_traffic = SET TRUE OR FALSE if you want random civilian air traffic doing their own thing at random airfields.
+random_fighter_air_traffic = SET TRUE OR FALSE if you want random fighter jet air traffic doing their own thing at random airfields.
+
+
+-- # of civ aircraft spawns PER TYPE,
+civ_rat_spawns = the amount of civilian ai air traffic spawns per type 
+
+-- set # of fighter aircraft spawns, for each type individually
+
+fighter_rat_a10_spawns = 1
+fighter_rat_f18_grnd_spawns = 1
+fighter_rat_f18_cv_spawns = 1
+fighter_rat_f16_spawns = 1
+fighter_rat_f15_spawns = 1
+fighter_rat_f14_grnd_spawns = 1
+fighter_rat_f14_cv_spawns = 1
+
+
+-- misc flight settings
+air_traffic_flight_level = the flight level of ai air traffic (100 = 10,000 ft)
+max_distance_destination = the max distance to a random airfield the ai air traffic will travel to in KM
+
+civ_allow_immortal = true or false to allow civ aircraft to be immortal
+civ_allow_invisible = true or false to allow civ aircraft to be invisible
+
+fighter_jet_combat_mode = set free/hold/return combat mode for fighter jets
+-- free is weapons free, ai will go on offensive
+-- hold is weapons hold, they will not fire
+-- return is return fire, they will only fire when fired upon.
+
+fighter_jet_immortal = true or false to allow fighter jets to be immortal
+fighter_jet_invisible = true or false to allow fighter jets to be invisbile to AI
+
+-- enable or disable ai aircraft types that will spawn in (use true or false)
+
+-- civilian
+enable_yak = true or false
+enable_c130 = true or false
+enable_c17 = true or false
+enable_an26 = true or false
+
+-- fighter jet
+enable_f14_cv_to_ground = spawns an f14 on the carrier, which will then land on a ground airfield
+enable_f14_ground_to_cv = spawns an f14 on a ground airfield, which will then land on the carrier
+enable_f18_cv_to_ground = spawns an f18 on the carrier, which will then land on a ground airfield
+enable_f18_ground_to_cv = spawns an f18 on a ground airfield, which will then land on the carrier
+
+enable_f14 = true or false (nttr only)
+enable_f15 = true or false
+enable_f16 = true or false
+enable_f18 = true or false (nttr only)
+enable_a10 = true or false
+
+
+
+___________
+
+CHANGING CTLD HELO SLINGLOADING SETTINGS:
+
+
+-- slingLoad = SET TRUE OR FALSE 
+TRUE = realistic slingloading. You need to fly a helicopter that can drop a sling to pickup crates.
+FALSE = any helicopter can pick up any CTLD object by simply hovering over it. There is no real sling.
+
+
+
+____________
+
+AIRBOSS CARRIER OPS SETTINGS:
+
+
+--AIRBOSS SETTINGS
+airboss_enable = true (use this option to enable or disable the entire airboss script)
+
+airboss_enable_markzones = true (enable marked zones for different carrier ops procedures)
+
+airboss_enable_smokezones = true
+
+airboss_enable_niceguy = true (LSO will not make harsh comments)
+
+airboss_enable_tanker = true (enable a tanker that will fly near the carrier for emergency refueling needs)
+airboss_enable_rescue_helo = true (will be near the carrier to pickup pilots that eject near the carrier)
+
+More airboss script information and documentation:
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+___________
+
+HOW TO CHANGE UNIT SPAWNING POOL:
+
+
+Simply add two dashes -- before the name of the unit you want to remove from the spawning pool.
+
+EXAMPLE, to ensure the SA-10 doesn't spawn the line with "sam_s10" will look like this
+ --"sam_s10"
+
+DO NOT DO ANYTHING HERE EXCEPT ADD DASHES TO THE UNITS YOU WANT REMOVED FROM THE SPAWNING POOL.
+
+ TemplateTable_SAM = { 
+--"example of disabled unit"
+"sam_s3",
+"sam_s2",
+"sam_s10",
+"sam_s11",
+"sam_s6",
+ } 
+ 
+  TemplateTable_AA = { 
+"aa_ural",
+"aa_shilka",
+"aa_tunguska",
+"aa_strella",
+"aa_osa",
+"aa_manpads",
+ } 

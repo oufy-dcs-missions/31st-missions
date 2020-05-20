@@ -39,7 +39,12 @@ luac.out
 *.x86_64
 *.hex
 
+*.acmi
+*.trk
+
+**/.idea/
 *.log*
 .buildpath
 .project
-.settings/
+**/.settings/
+**/*.iml

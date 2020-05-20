@@ -1,1 +1,0 @@
-startNukeConvoy({groupMi8Nuke1, groupMi8Nuke2, groupMi8Nuke3, groupMi8Nuke4})
