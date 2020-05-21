@@ -29,58 +29,66 @@ ctld.createRadioBeaconAtZone("FARP_campagne","blue",1440,"RP Alouette")
 ctld.createRadioBeaconAtZone("deploy_axeman_alpha","blue",1440,"DZ Axeman")
 
 function spawnEscortInZone(escortTemplate, popupZone, escortedGroup, escortFreq, skill, agressive)
-  if not(escortedGroup) then
-    BASE:E("spawnEscortInZone(): group " + escortedGroup + " not found !!!")
-    return nil
-  end
-  local popupZoneObject = ZONE:New(popupZone)
-  if not(popupZoneObject) then
-    BASE:E("spawnEscortInZone(): popup zone not found !!!")
-    return nil
-  end
-  local groupEscort = SPAWN
-    :New(escortTemplate)
-    :InitSkill(skill)
-    :OnSpawnGroup(
-      function( escortGroup )
-        BASE:E(string.format("group escorte : %s", escortGroup:GetName()))
-        BASE:E(string.format("is alive ? %s",tostring(escortGroup:IsAlive())))
-        escortGroup:PushTask(escortGroup:TaskEscort(escortedGroup, POINT_VEC3:New( 1000, 0, 1000 ), nil , 40, {"Air"}), 0)
-      end)
-    :SpawnInZone(popupZoneObject, true)
-  return groupEscort
+    if not(escortedGroup) then
+        BASE:E("spawnEscortInZone(): group " + escortedGroup + " not found !!!")
+        return nil
+    end
+    local popupZoneObject = ZONE:New(popupZone)
+    if not(popupZoneObject) then
+        BASE:E("spawnEscortInZone(): popup zone not found !!!")
+        return nil
+    end
+    local groupEscort = SPAWN:New(escortTemplate)
+                             :InitSkill(skill)
+                             :OnSpawnGroup(
+            function( escortGroup )
+                BASE:E(string.format("group escorte : %s", escortGroup:GetName()))
+                BASE:E(string.format("is alive ? %s",tostring(escortGroup:IsAlive())))
+                escortGroup:PushTask(escortGroup:TaskEscort(escortedGroup, POINT_VEC3:New( 1000, 0, 1000 ), nil , 40, {"Air"}), 0)
+            end)
+                             :SpawnInZone(popupZoneObject, true)
+    return groupEscort
 end
 
-
-function spawnEscortAtAirbase(escortTemplate, airbase, escortedGroup, escortFreq, skill, agressive)
-  if not(escortedGroup) then
-    BASE:E("spawnEscortInZone(): group " + escortedGroup + " not found !!!")
-    return nil
-  end
-  local groupEscort = SPAWN
-    :New(escortTemplate)
-    :InitSkill(skill)
-    :OnSpawnGroup(
-      function( escortGroup )
-        BASE:E(string.format("group escorte : %s", escortGroup:GetName()))
-        BASE:E(string.format("is alive ? %s",tostring(escortGroup:IsAlive())))
-        escortGroup:PushTask(escortGroup:TaskEscort(escortedGroup, POINT_VEC3:New( 1000, 0, 1000 ), nil , 40, {"Air"}), 0)
-      end)
-    :SpawnAtAirbase(AIRBASE:FindByName( airbase ),SPAWN.Takeoff.Cold)
-  return groupEscort
+---@param escortTemplate string
+---@param aibaseName string
+---@param escortedGroupName string
+---@param escortFreq number
+---@param skill string
+---@param agressive boolean
+---@return GROUP
+function spawnEscortAtAirbase(escortTemplate, aibaseName, escortedGroupName, escortFreq, skill, agressive)
+    if not(escortedGroupName) then
+        BASE:E("spawnEscortInZone(): group " + escortedGroupName + " not found !!!")
+        return nil
+    end
+    local groupEscort = SPAWN
+            :New(escortTemplate)
+            :InitSkill(skill)
+            :OnSpawnGroup(
+            function( escortGroup )
+                ---@type GROUP
+                local curGroup =  escortGroup
+                BASE:E(string.format("group escorte : %s", curGroup:GetName()))
+                BASE:E(string.format("is alive ? %s",tostring(curGroup:IsAlive())))
+                curGroup:PushTask(curGroup:TaskEscort(escortedGroupName, POINT_VEC3:New( 1000, 0, 1000 ), nil , 40, { "Air"}), 0)
+            end)
+            :SpawnAtAirbase(AIRBASE:FindByName(aibaseName),SPAWN.Takeoff.Cold)
+    return groupEscort
 end
 
+---@param param table<string, number>
 function setUserFlag(param)
     local userflag = USERFLAG:New(param[1])
     userflag:Set(param[2])
 end
 
 function ROEDegradation()
-  redA2ADispatcherLand:SetBorderZone( {zoneRedRussiaDefense, zoneFleetDefend, zoneExtendedRussiaDefense} )
-  local grpSA6Sochi = GROUP:FindByName("SA6_Sochi")
-  grpSA6Sochi:OptionAlarmStateRed()
-  grpSA6Sochi:OptionROEOpenFire()
-  MESSAGE:New("Nous sommes pris pour cible !!! \
+    redA2ADispatcherLand:SetBorderZone( {zoneRedRussiaDefense, zoneFleetDefend, zoneExtendedRussiaDefense} )
+    local grpSA6Sochi = GROUP:FindByName("SA6_Sochi")
+    grpSA6Sochi:OptionAlarmStateRed()
+    grpSA6Sochi:OptionROEOpenFire()
+    MESSAGE:New("Nous sommes pris pour cible !!! \
 Notre agent sur place nous signale qu'il a intercepté il y a 3 minutes un ordre de tir autorisé sur la batterie anti-aérienne au Nord de Sochi. \
 Procédez au repérage de la zone avec la plus extrème prudence.",60,"SITAC",true):ToBlue()
 end
@@ -98,7 +106,6 @@ groupRedTankerLand = GROUP:FindByName("RedTankerLand")
 groupRedTankerLand:StartUncontrolled(60)
 groupRedAWACS = GROUP:FindByName("RedAwacs")
 groupRedAWACS:StartUncontrolled(0)
-
 
 groupEscortArco = spawnEscortAtAirbase("escort_tomcat",AIRBASE.Caucasus.Kobuleti,groupArco,264.25,"Excellent",false)
 groupEscortTexaco = spawnEscortAtAirbase("escort_hornet",AIRBASE.Caucasus.Batumi,groupTexaco,264.00,"Excellent",false)
