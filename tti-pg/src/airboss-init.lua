@@ -18,7 +18,7 @@ if airboss_enable == true then
   local airbossStennis = AIRBOSS:New("Stennis", "Stennis")
 
   airbossStennis:SetTACAN(75, "X", "STN")
-  airbossStennis:SetICLS(18, "LSO")
+  airbossStennis:SetICLS(15, "LSO")
   airbossStennis:SetLSORadio(127.5)
   airbossStennis:SetMarshalRadio(127.5)
   airbossStennis:SetPatrolAdInfinitum(true)
@@ -44,34 +44,6 @@ if airboss_enable == true then
 
   airbossStennis:Start()
 
-  local airbossBush = AIRBOSS:New("Bush", "Bush")
-
-  airbossBush:SetTACAN(74, "X", "STN")
-  airbossBush:SetICLS(17, "LSO")
-  airbossBush:SetLSORadio(127.4)
-  airbossBush:SetMarshalRadio(127.4)
-  airbossBush:SetPatrolAdInfinitum(true)
-  airbossBush:SetCarrierControlledArea(45)
-  airbossBush:SetStaticWeather(true)
---  airbossBush:SetMenuSingleCarrier()
-  airbossBush:SetRecoveryCase(1)
-  airbossBush:SetMaxLandingPattern(6)
-  airbossBush:SetDefaultPlayerSkill(AIRBOSS.Difficulty.NORMAL) -- other options EASY / HARD
-  airbossBush:SetHandleAIOFF()
-  airbossBush:SetMenuRecovery(30, 20, true)
-  airbossBush:SetMenuMarkZones(airboss_enable_markzones)
-  airbossBush:SetMenuSmokeZones(airboss_enable_smokezones)
-  airbossBush:SetAirbossNiceGuy(airboss_enable_niceguy)
-  airbossBush:SetRadioRelayMarshal("CVN74 Relay")
-  airbossBush:SetRadioRelayLSO("CVN74 Relay")
---  airbossBush:SetSoundfilesFolder("Airboss Soundfiles/")
---  airbossBush:Load(nil, "Greenie Board.csv")
---  airbossBush:SetAutoSave(nil, "Greenie Board.csv")
-
--- create fake recovery window at the end of the mission play
-  local window2 = airbossBush:AddRecoveryWindow("07:31", "23:55", 1, 0, false)
-
-  airbossBush:Start()
 
   if airboss_enable_tanker == true then
     local carrierTanker = nil  --Ops.RecoveryTanker#RECOVERYTANKER
@@ -82,23 +54,12 @@ if airboss_enable == true then
     carrierTanker:SetRespawnOn()
     carrierTanker:Start()
     airbossStennis:SetRecoveryTanker(carrierTanker)
-    local bushTanker = nil  --Ops.RecoveryTanker#RECOVERYTANKER
-    bushTanker = RECOVERYTANKER:New("Bush", "BushTanker")
-    bushTanker:SetTakeoffHot()
-    bushTanker:SetTACAN(31, "BST")
-    bushTanker:SetRadio(129, "AM")
-    bushTanker:SetRespawnOn()
-    bushTanker:Start()
-    airbossBush:SetRecoveryTanker(bushTanker)
   end
 
   if airboss_enable_rescue_helo == true then
     local RescueheloStennis=RESCUEHELO:New(UNIT:FindByName("Stennis"), "StennisRescue")
     RescueheloStennis:SetTakeoffHot()
     RescueheloStennis:Start()
-    local RescueheloBush=RESCUEHELO:New(UNIT:FindByName("Bush"), "BushRescue")
-    RescueheloBush:SetTakeoffHot()
-    RescueheloBush:Start()
   end
 
   env.info('Airboss ... OK')

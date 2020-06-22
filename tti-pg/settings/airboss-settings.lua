@@ -1,7 +1,7 @@
 --ADJUST AIRBOSS CARRIER OPS SETTINGS HERE
 
 --AIRBOSS SETTINGS
-airboss_enable = true
+airboss_enable = false
 
 airboss_enable_markzones = true
 
