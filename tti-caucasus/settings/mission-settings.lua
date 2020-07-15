@@ -5,16 +5,16 @@
 
 --Change if missions are auto-generated or not: SET TRUE OR FALSE
 
-a2g_easy_autostart = true
-a2g_hard_autostart = true
-a2g_helo_autostart = true
-a2g_helo_inf_autostart = true
-antiship_autostart = true
+a2g_easy_autostart = false
+a2g_hard_autostart = false
+a2g_helo_autostart = false
+a2g_helo_inf_autostart = false
+antiship_autostart = false
 
 enable_jtac_drones = true
-jtac_smoke_targets = true
+jtac_smoke_targets = false
 
-sam_enable = true
+sam_enable = false
 sam_site_jtacs_enable = true
 
 
@@ -23,9 +23,9 @@ sam_site_jtacs_enable = true
 slingLoad = true
 
 --defines enemy ship ai to attack or do nothing, set true or false
-enemy_ship_ai = false
+enemy_ship_ai = true
 
-a2a_autospawn_enable = true
+a2a_autospawn_enable = false
 a2a_intercept_autospawn_enable = false
 a2a_helo_autospawn_enable = false
 

@@ -10,18 +10,18 @@ civ_rat_spawns = 1
 
 -- set # of fighter aircraft spawns, for each type individually
 
-fighter_rat_a10_spawns = 1
-fighter_rat_f18_grnd_spawns = 1
-fighter_rat_f18_cv_spawns = 1
-fighter_rat_f16_spawns = 1
-fighter_rat_f15_spawns = 1
-fighter_rat_f14_grnd_spawns = 1
-fighter_rat_f14_cv_spawns = 1
+fighter_rat_a10_spawns = 0
+fighter_rat_f18_grnd_spawns = 0
+fighter_rat_f18_cv_spawns = 2
+fighter_rat_f16_spawns = 2
+fighter_rat_f15_spawns = 2
+fighter_rat_f14_grnd_spawns = 2
+fighter_rat_f14_cv_spawns = 2
 
-air_traffic_flight_level = 100
+air_traffic_flight_level = 350
 --example:  200 = 20000ft
 
-max_distance_destination = 380
+max_distance_destination = 800
 --the max distance in KM
 --of the ai aircaft's final destination airfield, which are chosen at random
 
@@ -41,7 +41,7 @@ fighter_jet_invisible = false
 -- civilian
 enable_yak = true
 enable_c130 = true
-enable_c17 = false
+enable_c17 = true
 enable_an26 = true
 
 -- fighter jet

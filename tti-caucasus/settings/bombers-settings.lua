@@ -7,7 +7,7 @@
 -- you can ADD any other planes you want that are available in the other aircraft group spawning pools to  be bomber escorts if you'd like
 
 
-enable_airbase_bombers = true
+enable_airbase_bombers = false
 enable_carrier_bombers = false
 
 enable_bomber_escorts = true
