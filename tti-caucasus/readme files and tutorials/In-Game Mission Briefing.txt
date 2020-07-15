@@ -13,14 +13,11 @@ The waypoint of active missions are noted in the intel reports in your F-10 Othe
 
 BULLSEYE is WPT-31
 
-AIRBOSS AVAILABLE FOR CARRIER OPS! (Not included on maps where carriers are not present)
-https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
 ______________
 
 All modern aircraft, both fixed and rotary wing are available with a dynamic mission spawning and tasking menu.
 
 Use your COMMUNICATIONS MENU button to find the tasking menus. (Usually bound to your \ key ).
-
 ______________
 
 A CUSTOM KNEEBOARD WITH A LIST OF TACANS/FREQUENCIES IS AVAILABLE! Usually, you can pull up the kneeboard with K or Shift-K. Use [ to navigate BACKWARDS to find the custom page(s). If those are not the controls for your kneeboard, check your control settings and search for "kneeboard"
@@ -32,7 +29,7 @@ AWACS:
 Tankers:
 KC-135 (Boom) “Texaco” 
 @15,000 FT 205 KTS
-255 Mhz AM 40Y-AA TCN
+255 Mhz AM 41Y-AA TCN
 
 KC-135 (Boom) “Arco”
 @19,000 FT 270 KTS
@@ -40,16 +37,16 @@ KC-135 (Boom) “Arco”
 
 KC-135 MPRS (Basket) “Shell”
 @19,000 FT 270 KTS
-254 Mhz AM 41Y-AA TCN
+254 Mhz AM 40Y-AA TCN
 
 AIRBOSS Tanker S-3B (Basket) “Arco” 
 253 Mhz AM 31Y-AA TCN
 
 Carriers:
-LHS-1 Tarawa - 42X TCN
+LHA-1 Tarawa - 42X TCN
 ATC: 126.5Mhz AM
 
-CVN-74 Stennis - 43X TCN
+CVN-7X - 43X TCN
 CRS: Varies (Click on unit while in-game to find HEADING)
 ATC: 225.5Mhz AM
 ICLS - 5
@@ -111,7 +108,22 @@ Full CTLD usage information:
 https://github.com/ciribob/DCS-CTLD
 
 YOU CAN ENABLE REAL SLINGLOADING OR HOVER SIMULATED LOADING IN THE DEFINE MISSION SETTINGS IN THE MISSION EDITOR TRIGGER LIST.
+______________
 
+Super Carrier Static Deck Spawns Menu available! - Super Carrier Maps ONLY.
+
+Big thanks to Redkite for allowing me to add these amazing static deck layouts for the Super Carrker.
+
+You do not have to add these template scripts in yourself, you can simply adjust the layouts using the F10 Menu to add static layouts and remove them. You can mix and match as you please in REAL TIME during the mission.
+
+Layout Scripts Created by Redkite
+https://www.digitalcombatsimulator.com/en/files/3309905/
+https://youtu.be/XONOFbhwbsU
+https://www.youtube.com/user/RedKiteRender/
+______________
+
+AIRBOSS AVAILABLE FOR CARRIER OPS! (Not included on maps where carriers are not present)
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
 ______________
 
 "ZEUS" MAP MARKER SPAWNS AND COMMANDS:

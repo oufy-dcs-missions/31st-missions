@@ -37,10 +37,37 @@ a2a_helo_respawn_time_max = 3420
 for a dynamic spawn time choose a minimum and maximum time between spawns or make them the same if you want a static time between spawns.
 
 
+________________
+
+bomber mission settings:
+
+enable_airbase_bombers = set true or false if you want bombers that attack your main airbase
+enable_carrier_bombers = set true or false if you want bombers that attack ships (only where anti-ship missions are available)
+
+enable_bomber_escorts = set true or false if you want bombers with escort fighters
+
+
+--define how many bombers  at each spawn
+
+ground_bomber_amount = how many bombers at each spawn
+ship_bomber_amount = how many bombers at each spawn
+
+
+___________________
+
+Intel report settings:
+
+
+intel_msg_time = (TIME IN SECONDS) how long the intel report message stays up
+
+
+___________________
+
 sam_enable = SET TRUE OR FALSE DEPENDING ON IF YOU WANT THERE TO BE RANDOM SAM SITES SPAWNING ON THE MAP OUTSIDE OF MISSION ZONES 
 sam_site_jtacs_enable = SET TRUE OR FALSE IF YOU WANT JTACS THAT LASE/SMOKE AT THE RANDOM SAM SITES
 sam_respawn_time = TIME IN SECONDS BETWEEN RANDOM SAM SITE SPAWN
 
+enable_jtac_drones = SET TRUE OR FALSE if you want to spawn the auto-lasing/smoking JTACS at ground missions.
 jtac_smokes_targets = SET TRUE OR FALSE IF YOU WANT JTACS TO SMOKE LASED TARGETS!
 
 enemy_ship_ai = SET TRUE OR FALSE if you want enemy AI ships to attack/defend or do nothing.

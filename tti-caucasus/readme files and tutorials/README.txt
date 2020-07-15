@@ -19,6 +19,12 @@ If you want AI wingmen, add more planes to the squadron of the slot you want to 
 Take note of the MISSION OPTIONS (Checkmark box on left side of the editor)
 It'd be a good idea to make sure you change the options you want; No labels, no enemies on F10 map, etc...
 
+
+
+WANT TO MOVE MISSION ZONES TO OTHER LOCATIONS?
+
+EASY! You can do that! Just make sure to move the waypoints with them so that the WPT number text will reflect the correct location of your zone. The intel text with coordinates and GRID will adjust automatically, but the waypoints will not.
+
 #######################################################################
 
 
