@@ -15,12 +15,12 @@
 
 if airboss_enable == true then
 
-local airbossCVN = AIRBOSS:New("CVN-7X", "CVN-7X")
+local airbossCVN = AIRBOSS:New("CVN-77", "CVN-77")
 
-airbossCVN:SetTACAN(43, "X", "CVN")
-airbossCVN:SetICLS(5, "LSO")
-airbossCVN:SetLSORadio(261)
-airbossCVN:SetMarshalRadio(261)
+airbossCVN:SetTACAN(77, "X", "BSH")
+airbossCVN:SetICLS(17, "LSO")
+airbossCVN:SetLSORadio(127.4)
+airbossCVN:SetMarshalRadio(127.4)
 airbossCVN:SetPatrolAdInfinitum(true)
 airbossCVN:SetCarrierControlledArea(45)
 airbossCVN:SetStaticWeather(true)
@@ -33,30 +33,30 @@ airbossCVN:SetMenuRecovery(30, 20, true)
 airbossCVN:SetMenuMarkZones(airboss_enable_markzones)
 airbossCVN:SetMenuSmokeZones(airboss_enable_smokezones)
 airbossCVN:SetAirbossNiceGuy(airboss_enable_niceguy)
-airbossCVN:SetRadioRelayMarshal("CVN7X Relay")
-airbossCVN:SetRadioRelayLSO("CVN7X Relay")
+airbossCVN:SetRadioRelayMarshal("CVN77 Relay")
+airbossCVN:SetRadioRelayLSO("CVN77 Relay")
 --airbossCVN:SetSoundfilesFolder("Airboss Soundfiles/")
 --airbossCVN:Load(nil, "Greenie Board.csv")
 --airbossCVN:SetAutoSave(nil, "Greenie Board.csv")
 
 -- create fake recovery window at the end of the mission play
-local window1 = airbossCVN:AddRecoveryWindow("07:31", "23:55", 1, 0, false)
+local window1 = airbossCVN:AddRecoveryWindow("07:31", "23:55", 1, 0, true)
 
 airbossCVN:Start()
 
 if airboss_enable_tanker == true then
 local carrierTanker = nil  --Ops.RecoveryTanker#RECOVERYTANKER
-carrierTanker = RECOVERYTANKER:New("CVN-7X", "CVNTanker")
+carrierTanker = RECOVERYTANKER:New("CVN-77", "CVNTanker")
 carrierTanker:SetTakeoffHot()
 carrierTanker:SetTACAN(31, "KST")
-carrierTanker:SetRadio(253, "AM")
+carrierTanker:SetRadio(129, "AM")
 carrierTanker:SetRespawnOn()
 carrierTanker:Start()
 airbossCVN:SetRecoveryTanker(CVNTanker)
 end
 
 if airboss_enable_rescue_helo == true then
-local RescueheloStennis=RESCUEHELO:New(UNIT:FindByName("CVN-7X"), "CVNRescue")
+local RescueheloStennis=RESCUEHELO:New(UNIT:FindByName("CVN-77"), "CVNRescue")
 RescueheloStennis:SetTakeoffHot()
 RescueheloStennis:Start()
 end

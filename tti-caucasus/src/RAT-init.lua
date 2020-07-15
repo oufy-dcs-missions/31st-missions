@@ -2,7 +2,7 @@ airbase_1 = "Gudauta"
 airbase_2 = "Sochi-Adler"
 airbase_3 = "Sukhumi-Babushara"
 
-carrier_stennis = "CVN-7X"
+carrier_stennis = "CVN-77"
 carrier_tarawa = "LHA-1 Tarawa"
 carrier_kuznetzov = "CV Kuznetsov"
 

@@ -24,8 +24,7 @@ KC-135 “Texaco” Olive1 41Y
 KC-135 “Arco” Olive2 39Y
 KC-135 MPRS “Shell” Olive3 40Y
 
-AIRBOSS Stennis Tanker S-3B “Arco” Olive2 32Y 
-AIRBOSS Bush Tanker S-3B "Shell" Olive3 31Y 
+AIRBOSS Bush Tanker S-3B "Arco" Olive3 31Y
 
 Porte-avions:
 LHS-1 Tarawa - 42X TCN Black1
