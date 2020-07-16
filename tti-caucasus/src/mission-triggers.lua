@@ -173,8 +173,8 @@ if trigger.misc.getUserFlag('51') == 1 then
 	end
 	
 	timer.scheduleFunction(function() 
-	sp("TANKER-KC135-SLOW-256am-39Y-ARCO")
-		ArcoTanker = SPAWN:New("TANKER-KC135-SLOW-256am-39Y-ARCO")
+	sp("TANKER-KC135-SLOW-264.25AM-39Y-ARCO")
+		ArcoTanker = SPAWN:New("TANKER-KC135-SLOW-264.25AM-39Y-ARCO")
 		:OnSpawnGroup(
 			function(SpawnedGroup)
 	
@@ -185,8 +185,8 @@ if trigger.misc.getUserFlag('51') == 1 then
 	end, nil, timer.getTime() + 8  )
 	
 	timer.scheduleFunction(function() 
-	--sp("TANKER-135MPRS-254am-40Y-SHELL")
-		ShellTanker = SPAWN:New("TANKER-135MPRS-254am-40Y-SHELL")
+	--sp("TANKER-135MPRS-129am-40Y-SHELL")
+		ShellTanker = SPAWN:New("TANKER-135MPRS-129am-40Y-SHELL")
 		:OnSpawnGroup(
 			function(SpawnedGroup)
 	
@@ -197,8 +197,8 @@ if trigger.misc.getUserFlag('51') == 1 then
 	end, nil, timer.getTime() + 9  )
 	
 	timer.scheduleFunction(function() 
-	--sp("TANKER-KC135-FAST-255am-41Y-TEX")
-		TexTanker = SPAWN:New("TANKER-KC135-FAST-255am-41Y-TEX")
+	--sp("TANKER-KC135-FAST-264am-41Y-TEX")
+		TexTanker = SPAWN:New("TANKER-KC135-FAST-264am-41Y-TEX")
 		:OnSpawnGroup(
 			function(SpawnedGroup)
 	

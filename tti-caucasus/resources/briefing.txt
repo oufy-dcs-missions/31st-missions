@@ -32,6 +32,7 @@ LHS-1 Tarawa - 42X TCN Black1
 CVN-77 Bush - 77X TCN
 CRS: Varies (Click on unit while in-game to find HEADING)
 ATC: Black6
+AIRBOSS: Black3
 ICLS - 17
 Module airboss activé : le porte avion se mettra face au vent si vous le demandez par menu radio :
 https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
