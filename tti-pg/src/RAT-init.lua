@@ -4,7 +4,7 @@ airbase_3 = "Sukhumi-Babushara"
 airbase_4 = AIRBASE.PersianGulf.Abu_Dhabi_International_Airport
 
 carrier_stennis = "Stennis"
-carrier_bush = "Bush"
+carrier_roosevelt = "Roosevelt"
 carrier_tarawa = "LHA-1 Tarawa"
 carrier_kuznetzov = "CV Kuznetsov"
 
@@ -113,8 +113,8 @@ if enable_f14_cv_to_ground == true then
 local f14=RAT:New("RAT_F14")
 f14:SetTerminalType(AIRBASE.TerminalType.FighterAircraft)
 f14:SetTakeoff("hot")
-f14:SetDeparture({carrier_stennis, carrier_bush})
---f14:SetDestination({carrier_stennis, carrier_bush})
+f14:SetDeparture({ carrier_stennis, carrier_roosevelt })
+f14:SetDestination({carrier_roosevelt})
 f14:SetMaxDistance(max_distance_destination)
 f14:TimeDestroyInactive(inactive_timer)
 f14:ATC_Messages(false)
@@ -137,7 +137,7 @@ local f14_grnd=RAT:New("RAT_F14_grnd")
 f14_grnd:SetTerminalType(AIRBASE.TerminalType.FighterAircraft)
 f14_grnd:SetTakeoff("hot")
 f14_grnd:SetDeparture({airbase_1, airbase_2, airbase_4})
-f14_grnd:SetDestination({carrier_stennis, carrier_bush})
+f14_grnd:SetDestination({ carrier_roosevelt })
 f14_grnd:SetMaxDistance(max_distance_destination)
 f14_grnd:TimeDestroyInactive(inactive_timer)
 f14_grnd:ATC_Messages(false)
@@ -200,8 +200,8 @@ if enable_f18_cv_to_ground == true then
 local f18=RAT:New("RAT_F18")
 f18:SetTerminalType(AIRBASE.TerminalType.FighterAircraft)
 f18:SetTakeoff("hot")
-f18:SetDeparture({carrier_stennis, carrier_bush})
---f18:SetDestination({carrier_stennis, carrier_bush})
+f18:SetDeparture({ carrier_stennis, carrier_roosevelt })
+f18:SetDestination({carrier_roosevelt})
 f18:SetMaxDistance(max_distance_destination)
 f18:TimeDestroyInactive(inactive_timer)
 f18:ATC_Messages(false)
@@ -222,7 +222,7 @@ local f18_grnd=RAT:New("RAT_F18_grnd")
 f18_grnd:SetTerminalType(AIRBASE.TerminalType.FighterAircraft)
 f18_grnd:SetTakeoff("hot")
 f18_grnd:SetDeparture({airbase_1, airbase_2, airbase_4})
-f18_grnd:SetDestination({carrier_stennis, carrier_bush})
+f18_grnd:SetDestination({ carrier_roosevelt })
 f18_grnd:SetMaxDistance(max_distance_destination)
 f18_grnd:TimeDestroyInactive(inactive_timer)
 f18_grnd:ATC_Messages(false)
