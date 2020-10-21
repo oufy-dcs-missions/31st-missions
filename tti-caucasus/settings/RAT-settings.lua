@@ -12,11 +12,11 @@ civ_rat_spawns = 1
 
 fighter_rat_a10_spawns = 0
 fighter_rat_f18_grnd_spawns = 0
-fighter_rat_f18_cv_spawns = 2
+fighter_rat_f18_cv_spawns = 4
 fighter_rat_f16_spawns = 2
 fighter_rat_f15_spawns = 2
 fighter_rat_f14_grnd_spawns = 2
-fighter_rat_f14_cv_spawns = 2
+fighter_rat_f14_cv_spawns = 0
 
 air_traffic_flight_level = 350
 --example:  200 = 20000ft
@@ -45,8 +45,8 @@ enable_c17 = true
 enable_an26 = true
 
 -- fighter jet
-enable_f14_cv_to_ground = true
-enable_f14_ground_to_cv = true
+enable_f14_cv_to_ground = false
+enable_f14_ground_to_cv = false
 enable_f15 = true
 enable_f16 = true
 enable_f18_cv_to_ground = true
