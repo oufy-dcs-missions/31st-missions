@@ -13,6 +13,6 @@ SEAD_GROUPS = {
     "s6_red",
     "hawk_red",
     "buk_red",
-    --"s11_red",
-    --"s10_red"
+    "s11_red",
+    "s10_red"
 }

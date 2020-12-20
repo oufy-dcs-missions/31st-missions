@@ -5,8 +5,11 @@
 ---
 --SET NUMERICAL VALUES FOR EACH OPTION, ALTITUDE IN FT SPEED IN KTS
 
-Tanker_BOOM_Altitude = 10000
-Tanker_BOOM_Speed = 310
+Tanker_BOOM_Altitude = 19000
+Tanker_BOOM_Speed = 360
 
-Tanker_BASKET_Altitude = 25000
-Tanker_BASKET_Speed = 310
+Tanker_BOOM_Altitude_Low = 14000
+Tanker_BOOM_Speed_Slow = 250
+
+Tanker_BASKET_Altitude = 28000
+Tanker_BASKET_Speed = 360

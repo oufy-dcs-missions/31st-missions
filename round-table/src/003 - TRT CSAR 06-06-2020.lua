@@ -278,7 +278,7 @@ csar.redmash = {
 } -- The unit that serves as MASH for the red side
 
 
-csar.csarMode = 0
+csar.csarMode = 1
 
 --      0 - No Limit - NO Aircraft disabling
 --      1 - Disable Aircraft when its down - Timeout to reenable aircraft
@@ -289,7 +289,7 @@ csar.maxLives = 8 -- Maximum pilot lives
 
 csar.countCSARCrash = false -- If you set to true, pilot lives count for CSAR and CSAR aircraft will count.
 
-csar.reenableIfCSARCrashes = true -- If a CSAR heli crashes, the pilots are counted as rescued anyway. Set to false to Stop this
+csar.reenableIfCSARCrashes = false -- If a CSAR heli crashes, the pilots are counted as rescued anyway. Set to false to Stop this
 
 -- - I recommend you leave the option on below IF USING MODE 1 otherwise the
 -- aircraft will be disabled for the duration of the mission

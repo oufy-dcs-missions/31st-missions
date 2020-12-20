@@ -6,16 +6,16 @@
 
 --SET TRUE OR FALSE HERE TO ENABLE OR DISABLE MISSION FEATURES
 --------
-enable_BAI_tasks = true
-enable_BAI_HARD_tasks = true
-enable_AntiShip_tasks = true
-enable_SEAD_tasks = true
+enable_BAI_tasks = false
+enable_BAI_HARD_tasks = false
+enable_AntiShip_tasks = false
+enable_SEAD_tasks = false
 
-enable_Helo_tasking = true
-Enable_JTAC_Smoke = true
+enable_Helo_tasking = false
+Enable_JTAC_Smoke = false
 --------
 enable_MissileTrainer = false
-enable_ExtraDamage = true
+enable_ExtraDamage = false
 enable_RescueHelos = true
 
 enable_AirTraffic = true
@@ -23,7 +23,7 @@ MAX_Air_Traffic_Planes = 7
 
 enable_CTDL = true
 --------
-enable_CSAR = true
+enable_CSAR = false
 CSAR_Time_Min = 300
 CSAR_Time_Max = 600
 --------

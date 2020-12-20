@@ -262,7 +262,8 @@ BriefingNAVTable = {
 }
 
 
-TemplateZones = {zone1,zone2,zone3,zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22, zone23, zone24, zone25, zone26, zone27, zone28, zone29, zone30, zone31, zone32, zone33,zone34, zone35, zone36, zone37, zone38, zone39, zone40, zone41, zone42, zone43, zone44, zone45, zone46, zone47, zone48, zone49, zone50, zone51, zone52, zone53, zone54, zone55, zone56, zone57, zone58, zone59, zone60, zone61, zone62, zone63, zone64, zone65, zone66, zone67, zone68, zone69, zone70, zone71, zone72, zone73, zone74, zone75, zone76, zone77, zone78, zone79, zone80, zone81, zone82, zone83, zone84, zone85, zone86, zone87, zone88, zone89, zone90, zone91, zone92, zone93, zone94, zone95, zone96, zone97, zone98, zone99, zone100, zone101, zone102, zone103, zone104, zone105, zone106, zone107, zone108, zone109, zone110, zone111, zone112, zone113, zone114, zone115, zone116, zone117, zone118, zone119, zone120, zone121, zone122, zone123, zone124, zone125, zone126, zone127, zone128, zone129, zone130, zone131, zone132, zone133, zone134, zone135, zone136, zone137, zone138, zone139, zone140, zone141, zone142, zone143, zone144, zone145, zone146, zone147, zone148, zone149, zone150}
+--TemplateZones = {zone1,zone2,zone3,zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22, zone23, zone24, zone25, zone26, zone27, zone28, zone29, zone30, zone31, zone32, zone33,zone34, zone35, zone36, zone37, zone38, zone39, zone40, zone41, zone42, zone43, zone44, zone45, zone46, zone47, zone48, zone49, zone50, zone51, zone52, zone53, zone54, zone55, zone56, zone57, zone58, zone59, zone60, zone61, zone62, zone63, zone64, zone65, zone66, zone67, zone68, zone69, zone70, zone71, zone72, zone73, zone74, zone75, zone76, zone77, zone78, zone79, zone80, zone81, zone82, zone83, zone84, zone85, zone86, zone87, zone88, zone89, zone90, zone91, zone92, zone93, zone94, zone95, zone96, zone97, zone98, zone99, zone100, zone101, zone102, zone103, zone104, zone105, zone106, zone107, zone108, zone109, zone110, zone111, zone112, zone113, zone114, zone115, zone116, zone117, zone118, zone119, zone120, zone121, zone122, zone123, zone124, zone125, zone126, zone127, zone128, zone129, zone130, zone131, zone132, zone133, zone134, zone135, zone136, zone137, zone138, zone139, zone140, zone141, zone142, zone143, zone144, zone145, zone146, zone147, zone148, zone149, zone150}
+TemplateZones = {zone1,zone2,zone3,zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone20, zone21, zone22, zone23, zone24, zone25, zone26, zone27, zone28, zone29, zone30, zone31, zone32, zone33,zone34, zone35, zone36, zone37, zone38, zone39, zone40, zone41, zone42, zone43, zone44, zone47, zone48, zone49, zone50, zone51, zone52, zone53, zone54, zone55, zone56, zone58, zone59, zone60, zone61, zone62, zone63, zone64, zone65, zone66, zone69, zone70, zone71, zone72, zone73, zone74, zone75, zone76, zone77, zone78, zone79, zone82, zone83, zone84, zone85, zone86, zone88, zone89, zone90, zone91, zone92, zone93, zone95, zone96, zone97, zone98, zone99, zone100, zone101, zone102, zone103, zone104, zone105, zone106, zone107, zone108, zone109, zone110, zone111, zone112, zone113, zone114, zone115, zone116, zone117, zone118, zone119, zone120, zone121, zone122, zone123, zone124, zone125, zone127, zone128, zone129, zone130, zone131, zone132, zone133, zone135, zone136, zone137, zone138, zone139, zone140, zone141, zone142, zone143, zone144, zone145, zone146, zone147, zone148, zone149, zone150}
 TemplateHELOZones = {HeliZone1, HeliZone2, HeliZone3, HeliZone4, HeliZone5, HeliZone6, HeliZone7, HeliZone8, HeliZone9, HeliZone10, HeliZone11, HeliZone12, HeliZone13, HeliZone14, HeliZone15, HeliZone16, HeliZone17, HeliZone18, HeliZone19, HeliZone20, HeliZone21, HeliZone22, HeliZone23, HeliZone24, HeliZone25, HeliZone26, HeliZone27, HeliZone28, HeliZone29, HeliZone30, HeliZone31, HeliZone32, HeliZone33, HeliZone34, HeliZone35, HeliZone36, HeliZone37, HeliZone38, HeliZone39, HeliZone40}
 TemplateNavalZones = {navzone1, navzone2, navzone3, navzone4, navzone5, navzone6,navzone7,navzone8,navzone9,navzone10}
 TemplateBAI = {"Template0001","Template0002","Template0003","Template0004","Template0005","Template0006","Template0007","Template0008","Template0009","Template0010","Template0011","fob1_red","fob2_red","fob3_red","fob5_red","fob6_red", "Template0012", "Template0013", "Template0014", "Template0015", "Template0016", "Template0017"}
@@ -681,8 +682,8 @@ end
             120,
             0.5
         )
-    end
-    
+    end    
+
     --↓↓ SEAD TASK ↓↓----------------------------------------------------------------------------------------------------------------------------------------------------
     if enable_SEAD_tasks == true then
         function MakeTaskSEAD()
@@ -791,7 +792,7 @@ end
             0.5
         )
     end
-    
+
 --↓↓ HELO BAI TASK ↓↓----------------------------------------------------------------------------------------------------------------------------------------------------
 if enable_Helo_tasking == true then
     function MakeTask_HELO_BAI()
@@ -1343,56 +1344,73 @@ end
 
 --↓↓ AIRBOSS ↓↓-----------------------------------------------------------------------------------------------------------------------------------------------------
 local tanker =
-    RECOVERYTANKER:New(UNIT:FindByName('⚓ Battleship Battle Group-1'), '☮ YPF'):SetTakeoffAir():SetAltitude(
+    RECOVERYTANKER:New(UNIT:FindByName('Anchor-Tankers'), '☮ YPF'):SetTakeoffCold():SetAltitude(
     Tanker_BOOM_Altitude
-):SetSpeed(Tanker_BOOM_Speed):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetRadio(255):SetModex(511):SetTACAN(24, 'YPF'):SetRacetrackDistances(
+):SetSpeed(Tanker_BOOM_Speed):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetRadio(264):SetModex(511):SetTACAN(24, 'SHL'):SetRacetrackDistances(
     50,
     5
 ):Start()
 
 local tanker2 =
-    RECOVERYTANKER:New(UNIT:FindByName('⚓ Battleship Battle Group-1'), '☮ ARCO'):SetTakeoffAir():SetAltitude(
+    RECOVERYTANKER:New(UNIT:FindByName('Anchor-Tankers'), '☮ ARCO'):SetTakeoffCold():SetAltitude(
     Tanker_BASKET_Altitude
-):SetSpeed(Tanker_BASKET_Speed):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetRadio(257):SetModex(512):SetTACAN(25, 'ARC'):SetRacetrackDistances(
+):SetSpeed(Tanker_BASKET_Speed):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetRadio(264.25):SetModex(512):SetTACAN(25, 'ARC'):SetRacetrackDistances(
     50,
     5
 ):Start()
 
+local tanker3 =
+RECOVERYTANKER:New(UNIT:FindByName('Anchor-Texaco'), '☮ Texaco'):SetTakeoffCold():SetAltitude(
+        Tanker_BOOM_Altitude_Low
+):SetSpeed(Tanker_BOOM_Speed_Slow):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetRadio(129):SetModex(513):SetTACAN(28, 'TEX'):SetRacetrackDistances(
+        25,
+        5
+):Start()
+
 local awacs =
-    RECOVERYTANKER:New(UNIT:FindByName('⚓ Battleship Battle Group-1'), '☮ Wizard'):SetAWACS():SetTakeoffAir():SetRadio(
-    251
-):SetAltitude(20000):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetCallsign(CALLSIGN.AWACS.Wizard):SetRacetrackDistances(
+    RECOVERYTANKER:New(UNIT:FindByName('⚓ Battleship Battle Group-1'), '☮ Wizard'):SetAWACS():SetTakeoffCold():SetRadio(
+    261
+):SetAltitude(20000):SetHomeBase("⚓ CVN-73 George Washington"):SetCallsign(CALLSIGN.AWACS.Wizard):SetRacetrackDistances(
     40,
     5
 ):SetTACAN(26, 'WIZ'):SetModex(611):__Start(1)
 
+
+local awacsB =
+RECOVERYTANKER:New(UNIT:FindByName('Anchor-Overlord-1'), '☮ Overlord'):SetAWACS():SetTakeoffCold():SetRadio(
+        265.8
+):SetAltitude(37000):SetHomeBase(AIRBASE.Caucasus.Kutaisi):SetCallsign(CALLSIGN.AWACS.Overlord):SetRacetrackDistances(
+        40,
+        40
+):SetTACAN(27, 'OVR'):SetModex(612):__Start(1)
+
 if enable_RescueHelos == true then
     local rescuehelo =
-        RESCUEHELO:New(UNIT:FindByName('⚓ CVN-74 Stennis'), '☮ Rescate'):SetHomeBase(AIRBASE:FindByName('Tico_A')):SetTakeoffAir(
+        RESCUEHELO:New(UNIT:FindByName('⚓ CVN-74 Stennis'), '☮ Rescate'):SetHomeBase(AIRBASE:FindByName('Tico_A')):SetTakeoffHot(
 
-    ):SetRespawnInAir():SetRescueDuration(1):SetModex(42):Start()
+    ):SetRespawnOn():SetRescueDuration(1):SetModex(42):Start()
 
     local rescueheloB =
-        RESCUEHELO:New(UNIT:FindByName('⚓ LHA-1 Tarawa'), '☮ Rescate'):SetHomeBase(AIRBASE:FindByName('Tico_B')):SetTakeoffAir(
+        RESCUEHELO:New(UNIT:FindByName('⚓ LHA-1 Tarawa'), '☮ Rescate'):SetHomeBase(AIRBASE:FindByName('Tico_B')):SetTakeoffHot(
 
-    ):SetRespawnInAir():SetRescueDuration(1):SetModex(43):Start()
+    ):SetRespawnOn():SetRescueDuration(1):SetModex(43):Start()
 
     local rescueheloC =
         RESCUEHELO:New(UNIT:FindByName('⚓ CVN-73 George Washington'), '☮ Rescate'):SetHomeBase(
         AIRBASE:FindByName('Tico_C')
-    ):SetTakeoffAir():SetRespawnInAir():SetRescueDuration(1):SetModex(44):Start()
+    ):SetRespawnOn():SetRespawnInAir():SetRescueDuration(1):SetModex(44):Start()
 end
 
 BARCO01 = GROUP:FindByName('⚓ Admiral Kuznetsov'):PatrolRoute()
 BARCO02 = GROUP:FindByName('⚓ LHA-1 Tarawa'):PatrolRoute()
 local TarawaTCNU = UNIT:FindByName('⚓ LHA-1 Tarawa')
-local TarawaBeacon = TarawaTCNU:GetBeacon():ActivateTACAN(75, 'X', 'LHA', true):ActivateICLS(2, 'LHA')
+local TarawaBeacon = TarawaTCNU:GetBeacon():ActivateTACAN(75, 'X', 'LHA', true):ActivateICLS(15, 'LHA')
 BARCO03 = GROUP:FindByName('⚓ CVN-74 Stennis'):PatrolRoute()
 local StennisTCNU = UNIT:FindByName('⚓ CVN-74 Stennis')
-local StennisBeacon = StennisTCNU:GetBeacon():ActivateTACAN(74, 'X', 'STN', true):ActivateICLS(1, 'STN')
+local StennisBeacon = StennisTCNU:GetBeacon():ActivateTACAN(74, 'X', 'STN', true):ActivateICLS(14, 'STN')
 BARCO04 = GROUP:FindByName('⚓ CVN-73 George Washington'):PatrolRoute()
 local WashingtonTCNU = UNIT:FindByName('⚓ CVN-73 George Washington')
-local WashingtonBeacon = WashingtonTCNU:GetBeacon():ActivateTACAN(73, 'X', 'WSN', true):ActivateICLS(3, 'WSN')
+local WashingtonBeacon = WashingtonTCNU:GetBeacon():ActivateTACAN(73, 'X', 'WSN', true):ActivateICLS(13, 'WSN')
 BARCO05 = GROUP:FindByName('⚓ Battleship Battle Group'):PatrolRoute()
 
 --FIN---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2213,5 +2231,5 @@ function ANTISHIPViggen()
 end
 
 trigger.action.outText("▁ ▂ ▄ ▅ ▆ ▇ █ THE ROUND TABLE █ ▇ ▆ ▅ ▄ ▂ ▁", 20)
-trigger.action.outText("EN: CHECK YOUR MISSION CONFIG VIA RADIO MENU: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 15)
-trigger.action.outText("ES: REVISA TU CONFIGURACION CON EL MENÚ DE RADIO: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 13)
+--trigger.action.outText("EN: CHECK YOUR MISSION CONFIG VIA RADIO MENU: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 15)
+--trigger.action.outText("ES: REVISA TU CONFIGURACION CON EL MENÚ DE RADIO: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 13)

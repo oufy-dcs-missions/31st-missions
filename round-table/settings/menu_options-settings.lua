@@ -7,4 +7,4 @@
 allow_EndMissionViaRadio = true
 allow_CallSupportViaRadio = true
 allow_SpawnRedCAPs = true
-allow_ManualTaskCreation = false
+allow_ManualTaskCreation = true

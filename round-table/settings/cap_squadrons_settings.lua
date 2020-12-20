@@ -7,25 +7,25 @@
 -- Skill, possible values "Average", "Good", "High", "Excellent" or "Random", yes, with with quotes
 
 --//--ENEMY --//
-Enable_CAT_Squadron = true
+Enable_CAT_Squadron = false
 CAT_SQDN_Skill = "Excellent"
 
 Enable_BEAR_Squadron = false
 BEAR_SQDN_Skill = "Excellent"
 
-Enable_TIGER_Squadron = true
+Enable_TIGER_Squadron = false
 TIGER_SQDN_Skill = "Excellent"
 
-Enable_BOMBER_Squadrons = true
+Enable_BOMBER_Squadrons = false
 
 --//--ALLY --//
-Enable_FALCON_Squadron = true
+Enable_FALCON_Squadron = false
 FALCON_SQDN_Skill = "Excellent"
 
 Enable_HAWK_Squadron = false
 HAWK_SQDN_Skill = "Excellent"
 
-Enable_EAGLE_Squadron = true
+Enable_EAGLE_Squadron = false
 EAGLE_SQDN_Skill = "Excellent"
 
 --DISABLE UNWANTED PLANE GROUPS WITH TWO DASHES -- FROM THE POOL LIST BELOW:
@@ -45,10 +45,10 @@ RedCapPlanesLIST = {
     --"☢ F5E3",
     --"☢ F-15C",
     --"☢ F-18C",
-    --"☢ F-14B",
-    --"☢ JF-17",
-    --"☢ J-11",
-    --"☢ Mirage 2000"
+    "☢ F-14B",
+    "☢ JF-17",
+    "☢ J-11",
+    "☢ Mirage 2000"
 }
 
 RedBombPlanesLIST = {
@@ -72,8 +72,8 @@ BlueCapPlanesLIST = {
 
 --DEFINE THE MAX AMMOUNT OF ALIVE PLANES FOR EACH SIDE BELOW:
 
-TotalAliveRedPlanes = 2
-TotalAliveBluePlanes = 2
+TotalAliveRedPlanes = 0
+TotalAliveBluePlanes = 0
 
 
 --DEFINE CAP INTERVALS BELOW (IN SECONDS)
