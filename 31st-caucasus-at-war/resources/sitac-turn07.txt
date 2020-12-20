@@ -1,0 +1,132 @@
+DCS Liberation turn #6
+===============
+
+Current situation:
+===============
+
+There is an active frontline between Beslan and Mozdok. The war on the ground is still going on between Beslan and Nalchik. 
+
+
+
+Your flights:
+===============
+
+--------------------------------------------------
+Frelon-1 FA-18C_hornet x 4
+
+#0 -- TAKEOFF : Takeoff from Kutaisi
+#1 -- ASCEND : Ascend
+#2 -- INGRESS : INGRESS 
+#3 -- MineVody : DEAD : SA10
+#4 -- MineVody : DEAD : SA11
+#5 -- EGRESS : EGRESS from CROW
+#6 -- DESCEND : Descend to pattern alt
+#7 -- LANDING : RTB
+
+--------------------------------------------------
+Hyper-1 F-16C_50 x 2
+
+#0 -- TAKEOFF : Takeoff from Kutaisi
+#1 -- ASCEND : Ascend
+#2 -- ORBIT 0 : Standby between this point and the next one
+#3 -- ORBIT 1 : Standby between this point and the previous one
+#4 -- DESCEND : Descend to pattern alt
+#5 -- LANDING : RTB
+
+
+--------------------------------------------------
+Hawg-1 A-10C_2 x 2
+
+#0 -- TAKEOFF : Takeoff from Beslan
+#1 -- ASCEND : Ascend
+#2 -- SteerPoint : NAV
+#3 -- SteerPoint : NAV
+#4 -- SteerPoint : NAV
+#5 -- INGRESS : INGRESS on MineVody
+#6 -- CAS : CROW 2xBMP-3
+#7 -- CAS : CROW 2xBMP-2
+#8 -- CAS : CROW 6xT90
+#9 -- EGRESS : EGRESS from MineVody
+#10 -- DESCEND : Descend to pattern alt
+#11 -- LANDING : RTB
+
+--------------------------------------------------
+Super-1 F-16C_50 x 2
+
+#0 -- TAKEOFF : Takeoff from Beslan
+#1 -- ASCEND : Ascend
+#2 -- SteerPoint : NAV
+#3 -- INGRESS : INGRESS on MineVody
+#4 -- MineVody : DEAD : SA10
+#5 -- MineVody : DEAD : SA11
+#6 -- EGRESS : EGRESS from MineVody
+#7 -- DESCEND : Descend to pattern alt
+#8 -- LANDING : RTB
+
+--------------------------------------------------
+Felix-1 F-14B x 2
+
+#0 -- TAKEOFF : Takeoff from CVN-73 George Washington
+#1 -- ASCEND : Ascend
+#2 -- ORBIT 0 : Standby between this point and the next one
+#3 -- ORBIT 1 : Standby between this point and the previous one
+#4 -- DESCEND : Descend to pattern alt
+#5 -- LANDING : RTB
+
+--------------------------------------------------
+Frelon-2 FA-18C_hornet x 2
+
+#0 -- TAKEOFF : Takeoff from CVN-73 George Washington
+#1 -- ASCEND : Ascend
+#2 -- INGRESS : INGRESS on CATERPILLAR
+#3 -- SEAD on CATERPILLAR
+#4 -- EGRESS : EGRESS from CATERPILLAR
+#5 -- DESCEND : Descend to pattern alt
+#6 -- LANDING : RTB
+
+
+
+Planned ally flights:
+===============
+
+From Vaziani
+--------------------------------------------------
+
+CAP F-16C_50 x 2, departing in 25 minutes  -- CAP Beslan-Vaziani-Kutaisi
+CAP FA-18C_hornet x 2, departing in 0 minutes  -- CAP Mozdok
+
+From Beslan
+--------------------------------------------------
+
+CAP F-16C_50 x 2, departing in 10 minutes  -- CAP Kutaisi
+CAP FA-18C_hornet x 2, departing in 30 minutes  -- CAP CVN73
+
+From CVN-73 George Washington
+--------------------------------------------------
+
+BARCAP FA-18C_hornet x 2, departing in 15 minutes -- CAP CVN73
+
+
+
+Comms Frequencies:
+===============
+Tanker Texaco (KC-135): 41Y/Olive2
+Tanker Arco (KC135MPRS): 40Y/Olive1
+AWACS: Silver1
+Flight: 251 MHz AM
+--------------------------------------------------
+CVN-73 George Washington
+RADIO : Black-1
+TACAN : 73X WSN
+ICLS Channel : 13
+--------------------------------------------------
+LHA-4 Nassau
+RADIO : Black-6
+TACAN : 99X LHD
+ICLS Channel : 19
+--------------------------------------------------
+JTACS [F-10 Menu] : 
+===================
+
+Frontline Beslan/Mozdok -- Code : 1688
+Frontline Beslan/Nalchik -- Code : 1688

@@ -19,18 +19,13 @@ humanUnits = {
     --Frelon
     "Frelon-1-1",
     "Frelon-1-2",
+    "Frelon-1-3",
+    "Frelon-1-4",
+    "Frelon-2-1",
+    "Frelon-2-2",
     --Hawg
     "Hawg-1-1",
     "Hawg-1-2",
-    "Hawg-1-3",
-    --Alouette
-    "Alouette-1-1",
-    "Alouette-1-2",
-    --Cougar
-    "Cougar-1-1",
-    --Vandetta
-    "Vandetta-1-1",
-    "Vandetta-2-1",
 }
 
 function getClientFromUnitName (_unitName)

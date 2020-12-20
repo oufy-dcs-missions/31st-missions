@@ -1,0 +1,141 @@
+DCS Liberation turn #5
+===============
+
+Current situation:
+===============
+
+Our ground forces in Beslan are opposed to enemy forces based in Mozdok. There are combats between Beslan and Nalchik. 
+
+
+
+Your flights:
+===============
+
+--------------------------------------------------
+Cougar-1 -- FA-18C_hornet x 1
+
+#1 -- TAKEOFF : Takeoff from Kutaisi
+#2 -- ORBIT 0 : Standby between this point and the next one
+#3 -- ORBIT 1 : Standby between this point and the previous one
+#4 -- DESCEND : Descend to pattern alt
+#5 -- LANDING : RTB
+
+--------------------------------------------------
+Vandetta-2 -- FA-18C_hornet x 1
+
+#1 -- TAKEOFF : Takeoff from Kutaisi
+#2 -- INGRESS : INGRESS on DRAGON
+#3 --  : SEAD on DRAGON
+#4 -- EGRESS : EGRESS from DRAGON
+#5 -- DESCEND : Descend to pattern alt
+#6 -- LANDING : RTB
+
+--------------------------------------------------
+Vandetta-1 -- F-14B x 1
+
+#0 -- TAKEOFF : Takeoff from Kutaisi
+#1 -- INGRESS
+#2 --  : SEAD on DRAGON
+#3 -- DESCEND
+
+--------------------------------------------------
+Hyper -- F-16C_50 x 2
+
+#1 -- ASCEND : Ascend
+#2 -- ORBIT0: CAP
+#3 -- ORBIT1: CAP
+#4 -- DESCEND : Descend to pattern alt
+#5 -- LANDING : RTB
+
+--------------------------------------------------
+Super-1 -- F-16C_50 x 2
+
+#1 -- ASCEND : Ascend
+#2 -- Nalchik : Position of Nalchik [Enemy Airbase]
+#3-8 -- Nalchik Target Range
+#9 -- DESCEND : Descend to pattern alt
+#10 -- LANDING : RTB
+
+--------------------------------------------------
+Frelon -- FA-18C_hornet x 2
+
+#0 -- TAKEOFF : Takeoff from Kutaisi
+#1 -- ASCEND : Ascend
+#2-8 -- Nalchik Target Range
+#9 -- DESCEND
+#10 -- RTB
+
+--------------------------------------------------
+Hawg-1 -- A-10C_2 x 3
+
+#1 -- TAKEOFF : Takeoff from Vaziani
+#2 -- ASCEND : Ascend
+#3 -- INGRESS : Ingress into CAS area
+#4 -- CAS : Provide CAS
+#5 -- EGRESS : Egress from CAS area
+#6 -- DESCEND : Descend to pattern alt
+#7 -- LANDING : RTB
+#8 -- RTB
+
+--------------------------------------------------
+Alouette -- Ka-50 x 2
+
+#1 -- TAKEOFF : Takeoff from Vaziani
+#2 -- ASCEND : Ascend
+#3 -- INGRESS : Ingress into CAS area
+#4 -- CAS : Provide CAS
+#5 -- EGRESS : Egress from CAS area
+#6 -- DESCEND : Descend to pattern alt
+#7 -- LANDING : RTB
+#8 -- RTB
+
+--------------------------------------------------
+Felix-1 -- F-14B x 2
+
+#1 -- Mineralnye Vody : Position of Mineralnye Vody [Enemy Airbase]
+#2 -- CAP: South of Nalchik : Position of Nalchik [Enemy Airbase]
+#3 -- CAP : South of Mozdok : Position of Mozdok [Enemy Airbase]
+
+
+Planned ally flights:
+===============
+
+From Kutaisi
+--------------------------------------------------
+
+CAP F-16C_50 x 2, departing in 60 minutes
+
+From Vaziani
+--------------------------------------------------
+
+CAP F-16C_50 x 2, departing in 10 minutes
+CAP FA-18C_hornet x 2, departing in 75 minutes
+CAS AH-64D x 2, departing in 0 minutes
+
+From CVN-71 Theodore ROOSEVELT
+--------------------------------------------------
+
+BARCAP FA-18C_hornet x 2, departing in 15 minutes
+BARCAP FA-18C_hornet x 2, departing in 60 minutes
+
+
+Comms Frequencies:
+===============
+Tanker Texaco (KC-135): 60X/Olive1
+Tanker Arco (KC135MPRS): 61X/Olive2
+Tanker Shell (KC135): 62X/Olive3
+AWACS: Silver1
+Flight: 251 MHz AM
+--------------------------------------------------
+CVN-71 Theodore Roosevelt
+RADIO : Black1
+TACAN : 71X RSV
+ICLS Channel : 11
+--------------------------------------------------
+LHA-99 Nassau
+RADIO : Black6
+TACAN : 99X NAS
+ICLS:19
+--------------------------------------------------
+JTACS [F-10 Menu] : 
+===================
