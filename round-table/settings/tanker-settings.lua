@@ -12,4 +12,4 @@ Tanker_BOOM_Altitude_Low = 14000
 Tanker_BOOM_Speed_Slow = 250
 
 Tanker_BASKET_Altitude = 28000
-Tanker_BASKET_Speed = 360
+Tanker_BASKET_Speed = 400
