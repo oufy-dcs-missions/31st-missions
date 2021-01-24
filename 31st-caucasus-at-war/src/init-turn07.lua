@@ -26,6 +26,8 @@ humanUnits = {
     --Hawg
     "Hawg-1-1",
     "Hawg-1-2",
+    "Hawg-2-1",
+    "Hawg-2-2",
 }
 
 function getClientFromUnitName (_unitName)
