@@ -42,157 +42,41 @@ function spawnRecoveryTankerEscort(escortSpawnObject,customconfig)
   return escortSpawnObject
           :SpawnAtAirbase(AIRBASE:FindByName(customconfig.baseUnit),SPAWN.Takeoff.Cold, customconfig.altitude)
 end
-function ActivateGroup(param)
-  local objSpawn = param[1]
-  local strSkillLevel = param[2]
-  local strFlightName = param[3]
-  local intMessageTempo = param[4] or 45
-  local strMessage = param[5] or "Groupe %s activé !"
-  local blnSilent = param[6] or false
-  objSpawn:InitSkill(strSkillLevel):Spawn()
-  if not(blnSilent) then
-    snd1020HzTone:ToCoalition( coalition.side.BLUE )
-    MESSAGE:New(string.format(strMessage, strFlightName),intMessageTempo,"WARNING",false):ToBlue()
-  end
-end
-function fctKillSpawnObjectArray(param)
-  local arrGroups = param[1]
-  local strMessage = param[2]
-  local intMessageTempo = param[3] or 45
-  local blnSilent = param[4] or false
-  for index, objSpawn in pairs(arrGroups) do
-    fctKillSpawnObject({objSpawn})
-  end
-  if not(blnSilent) then
-    MESSAGE:New(string.format(strMessage),intMessageTempo,"WARNING",false):ToBlue()
-  end
-end
-function fctKillSpawnObject(param)
-  local objSpawn = param[1]
-  local GroupPlane, Index = objSpawn:GetFirstAliveGroup()
-  while GroupPlane ~= nil do
-    -- Do actions with the GroupPlane object.
-    GroupPlane:Destroy(true)
-    GroupPlane, Index = objSpawn:GetNextAliveGroup( Index )
-  end
-end
 --
 -- Generic Group functions
 --
-function startUncontrolledAirGroup(AirGroup)
-  BASE:E("Start")
-  AirGroup:SetCommand({
-    id = 'Start', 
-    params = {}
-  })
-end
-function StopMove( GroundGroup )
-  BASE:E("Stop")
-  local Command = GroundGroup:CommandStopRoute( true )
-  GroundGroup:SetCommand(Command)
-end
-function StartMove( GroundGroup )
-  BASE:E("Start")
-  local Command = GroundGroup:CommandStopRoute( false )
-  GroundGroup:SetCommand(Command)
-end
-
---
--- Tu_Raid trigger function
---
-function Activatebomber(param)
-  local arrGroups = param[1]
-  for index, bomber in ipairs(arrGroups)
-  do
-    startUncontrolledAirGroup(bomber)
-  end
-end
-function fctResetBomber(param)
-  local bomber = param[1]
-    GROUP:FindByName(bomber):Destroy(nil)
-  local GroupBomber = SPAWN:New(bomber):InitSkill("Excellent"):Spawn()
-  MESSAGE:New(string.format("Bombardier Russe %s recréé et re-intialisé", (GroupBomber:GetUnits()[1]):GetCallsign())):ToBlue()
-end
---
--- BVR functions
---
-function ActivateBVR(param)
-  local objSpawn = param[1]
-  local strFlightName = param[2]
-  local strSkillLevel = "Excellent"
-  local intMessageTempo = 45
-  local strMessage = "Un %s activé dans la zone de training BVR."
-  ActivateGroup({objSpawn, strSkillLevel, strFlightName, intMessageTempo, strMessage, true})
-end
---
--- WVR functions
---
-function ActivateWVR(param)
-  local objSpawn = param[1]
-  local strFlightName = param[2]
-  local strSkillLevel = "Excellent"
-  local intMessageTempo = 45
-  local strMessage = "Un %s activé dans la zone de training BFM."
-  ActivateGroup({objSpawn, strSkillLevel, strFlightName, intMessageTempo, strMessage, true})
-end
---
--- A/G functions
---
-function fctActivateSAM(param)
-  local SAMName = param[1]
-  local blnSilent = param[2] or false
-  local intMessageTempo = param[3] or 45
-  local grpSAM = GROUP:FindByName(SAMName)
-  if grpSAM then
-    grpSAM:SetAIOn()
-    if not(blnSilent) then
-      snd1020HzTone:ToCoalition( coalition.side.BLUE )
-      MESSAGE:New(string.format("%s IA Activé !!!",SAMName),intMessageTempo,"WARNING",false):ToBlue()
-    end
-  end
-end
-function fctSuspendSAM(param)
-  local SAMName = param[1]
-  local blnSilent = param[2] or false
-  local intMessageTempo = param[3] or 45
-  local grpSAM = GROUP:FindByName(SAMName)
-  if grpSAM then
-    grpSAM:SetAIOff()
-    if not(blnSilent) then
-      snd1020HzTone:ToCoalition( coalition.side.BLUE )
-      MESSAGE:New(string.format("%s IA Désactivée...",SAMName),intMessageTempo,"WARNING",false):ToBlue()
-    end
-  end
-end
 
 -- *****************************************************************************
 -- *                               Mission init                                *
 -- *****************************************************************************
 --                     **                     Tankers                         **
 --                     *********************************************************
+tankersArray = {}
+compteur = 0
 for index, tankerconfig in ipairs(TankersConfig) do
   if tankerconfig.enable == true then
+    compteur = compteur + 1
     env.info('creation Tanker : '.. tankerconfig.groupName..'...')
     local objTanker = RECOVERYTANKER:New(UNIT:FindByName(tankerconfig.patternUnit), tankerconfig.groupName)
-            :SetTakeoffCold()
-            :SetRespawnOnOff(tankerconfig.autorespawn)
-            :SetLowFuelThreshold(tankerconfig.fuelwarninglevel)
-            :SetAltitude(tankerconfig.altitude)
-            :SetSpeed(tankerconfig.speed)
-            :SetHomeBase(AIRBASE:FindByName(tankerconfig.baseUnit))
-            :SetCallsign(tankerconfig.callsign.name, tankerconfig.callsign.number)
-            :SetRecoveryAirboss(tankerconfig.airboss_recovery)
-            :SetRadio(tankerconfig.freq)
-            :SetModex(tankerconfig.modex)
-            :SetTACAN(tankerconfig.tacan.channel, tankerconfig.tacan.morse)
-            :SetRacetrackDistances(tankerconfig.racetrack.front, tankerconfig.racetrack.back)
+                                    :SetTakeoffCold()
+                                    :SetRespawnOnOff(tankerconfig.autorespawn)
+                                    :SetLowFuelThreshold(tankerconfig.fuelwarninglevel)
+                                    :SetAltitude(tankerconfig.altitude)
+                                    :SetSpeed(tankerconfig.speed)
+                                    :SetHomeBase(AIRBASE:FindByName(tankerconfig.baseUnit),tankerconfig.terminalType)
+                                    :SetCallsign(tankerconfig.callsign.name, tankerconfig.callsign.number)
+                                    :SetRecoveryAirboss(tankerconfig.airboss_recovery)
+                                    :SetRadio(tankerconfig.freq)
+                                    :SetModex(tankerconfig.modex)
+                                    :SetTACAN(tankerconfig.tacan.channel, tankerconfig.tacan.morse)
+                                    :SetRacetrackDistances(tankerconfig.racetrack.front, tankerconfig.racetrack.back)
     objTanker.customconfig = tankerconfig
     if tankerconfig.escortgroupname then
       function objTanker:OnAfterStart(from, event, to)
         self.escortSpawnObject = SPAWN:NewWithAlias(self.customconfig.escortgroupname,'escort-'.. self.customconfig.groupName)
-                :InitRepeatOnEngineShutDown()
-                :InitSkill("Excellent")
-                :OnSpawnGroup(function(SpawnGroup)
+                                      :InitRepeatOnEngineShutDown()
+                                      :InitSkill("Excellent")
+                                      :OnSpawnGroup(function(SpawnGroup)
           taskTankerEscort({self.customconfig, self, SpawnGroup})
         end)
         self.escortGroupObject = spawnRecoveryTankerEscort(self.escortSpawnObject,self.customconfig)
@@ -218,8 +102,8 @@ for index, tankerconfig in ipairs(TankersConfig) do
         end
       end
     end
-    objTanker:Start()
-    --arrayOfTankers[index] = objTanker
+    tankersArray[compteur] = objTanker
+    tankersArray[compteur]:Start()
   end
 end
 
@@ -227,26 +111,30 @@ end
 -- *****************************************************************************
 --                     **                     Awacs                           **
 --                     *********************************************************
+AwacsArray = {}
+compteur = 0
 for index, awacsconfig in ipairs(AwacsConfig) do
   if awacsconfig.enable == true then
+    compteur = compteur + 1
     env.info('creation AWACS : '.. awacsconfig.groupName..'...')
     local objAwacs = RECOVERYTANKER:New(UNIT:FindByName(awacsconfig.patternUnit), awacsconfig.groupName)
-            :SetAWACS(true, true)
-            :SetTakeoffCold()
-            :SetRespawnOnOff(awacsconfig.autorespawn)
-            :SetLowFuelThreshold(awacsconfig.fuelwarninglevel)
-            :SetAltitude(awacsconfig.altitude)
-            :SetSpeed(awacsconfig.speed)
-            :SetHomeBase(AIRBASE:FindByName(awacsconfig.baseUnit))
-            :SetCallsign(awacsconfig.callsign.name, awacsconfig.callsign.number)
-            :SetRecoveryAirboss(awacsconfig.airboss_recovery)
-            :SetRadio(awacsconfig.freq)
-            :SetModex(awacsconfig.modex)
-            :SetTACAN(awacsconfig.tacan.channel , awacsconfig.tacan.morse)
-            :SetRacetrackDistances(awacsconfig.racetrack.front, awacsconfig.racetrack.back)
+                                   :SetAWACS(true, true)
+                                   :SetTakeoffCold()
+                                   :SetRespawnOnOff(awacsconfig.autorespawn)
+                                   :SetLowFuelThreshold(awacsconfig.fuelwarninglevel)
+                                   :SetAltitude(awacsconfig.altitude)
+                                   :SetSpeed(awacsconfig.speed)
+                                   :SetHomeBase(AIRBASE:FindByName(awacsconfig.baseUnit),awacsconfig.terminalType)
+                                   :SetCallsign(awacsconfig.callsign.name, awacsconfig.callsign.number)
+                                   :SetRecoveryAirboss(awacsconfig.airboss_recovery)
+                                   :SetRadio(awacsconfig.freq)
+                                   :SetModex(awacsconfig.modex)
+                                   :SetTACAN(awacsconfig.tacan.channel , awacsconfig.tacan.morse)
+                                   :SetRacetrackDistances(awacsconfig.racetrack.front, awacsconfig.racetrack.back)
     objAwacs.customconfig = awacsconfig
     if awacsconfig.escortgroupname then
       function objAwacs:OnAfterStart(from, event, to)
+        env.info('popup AWACS : '..self.tanker.GroupName)
         self.escortSpawnObject = SPAWN:NewWithAlias(self.customconfig.escortgroupname,'escort-'.. self.customconfig.groupName)
                                       :InitRepeatOnEngineShutDown()
                                       :InitSkill("Excellent")
@@ -276,35 +164,42 @@ for index, awacsconfig in ipairs(AwacsConfig) do
         end
       end
     end
-    objAwacs:Start()
-    --arrayOfAwacs[index] = objAwacs
+    AwacsArray[compteur] = objAwacs
+    AwacsArray[compteur]:Start()
   end
 end
 
 -- *****************************************************************************
 --                     **                     Rescue Hello                    **
 --                     *********************************************************
+PedroArray = {}
+compteur = 0
 for index,pedro in ipairs(PedrosConfig) do
   if pedro.enable == true then
-    rescuehelo = RESCUEHELO:New(UNIT:FindByName(pedro.patternUnit),pedro.groupName)
-                           :SetHomeBase(AIRBASE:FindByName(pedro.baseUnit))
-                           :SetTakeoffCold()
-                           :SetRespawnOnOff(pedro.autorespawn)
-                           :SetRescueDuration(1)
-                           :SetModex(pedro.modex)
+    compteur = compteur +1
+    local rescuehelo = RESCUEHELO:New(UNIT:FindByName(pedro.patternUnit),pedro.groupName)
+                                 :SetHomeBase(AIRBASE:FindByName(pedro.baseUnit))
+                                 :SetTakeoffCold()
+                                 :SetRespawnOnOff(pedro.autorespawn)
+                                 :SetRescueDuration(1)
+                                 :SetModex(pedro.modex)
     function rescuehelo:OnAfterStart(from, event, to)
       self.helo:CommandSetFrequency(pedro.freq, radio.modulation.AM)
     end
+    PedroArray[compteur] = rescuehelo
+    PedroArray[compteur]:Start()
   end
-  rescuehelo:Start()
 end
 
 -- *****************************************************************************
 --                     **                       AirBoss                       **
 --                     *********************************************************
+AIRBOSSArray = {}
+compteur = 0
 for index, airbossconfig in ipairs(AirBossConfig) do
   if airbossconfig.enable == true then
-    objAirboss = AIRBOSS:New(airbossconfig.carriername, airbossconfig.alias)
+    compteur = compteur +1
+    local objAirboss = AIRBOSS:New(airbossconfig.carriername, airbossconfig.alias)
     objAirboss:SetTACAN(airbossconfig.tacan.channel, airbossconfig.tacan.mode, airbossconfig.tacan.morse)
     objAirboss:SetICLS(airbossconfig.icls.channel, airbossconfig.icls.morse)
     objAirboss:SetLSORadio(airbossconfig.freq.lso)
@@ -323,7 +218,8 @@ for index, airbossconfig in ipairs(AirBossConfig) do
     if airbossconfig.menurecovery.enable == true then
       objAirboss:SetMenuRecovery(airbossconfig.menurecovery.duration,
               airbossconfig.menurecovery.windondeck,
-              airbossconfig.menurecovery.uturn)
+              airbossconfig.menurecovery.uturn,
+              airbossconfig.menurecovery.offset)
     end
     objAirboss:SetMenuMarkZones(airbossconfig.enable_markzones)
     objAirboss:SetMenuSmokeZones(airbossconfig.enable_smokezones)
@@ -340,7 +236,17 @@ for index, airbossconfig in ipairs(AirBossConfig) do
     -- create fake recovery window at the end of the mission play
     --local window1 = airbossCVN:AddRecoveryWindow("15:00", "16:30", 3, 30, true, 20, false)
     --local window2 = airbossCVN:AddRecoveryWindow("18:00", "20:30", 3, 30, true, 20, false)
-    objAirboss:Start()
+    objAirboss:AddRecoveryWindow(
+            60*45,
+            60*(airbossconfig.menurecovery.duration+45),
+            airbossconfig.recoverycase,
+            airbossconfig.menurecovery.offset,
+            true,
+            airbossconfig.menurecovery.windondeck,
+            airbossconfig.menurecovery.uturn
+    )
+    AIRBOSSArray[compteur] = objAirboss
+    AIRBOSSArray[compteur]:Start()
     trigger.action.outText('AIRBOSS scripts Loaded for unit '..airbossconfig.carriername, 10)
     timer.scheduleFunction(function()
       trigger.action.outText(	"<< If the AIRBOSS option does not appear in your F10 - Other Menu, try switching slots a few times and you will get the AIRBOSS message popups! Check the AIRBOSS documentation (link in briefing for more info) >>", 30)
@@ -355,8 +261,11 @@ end
 -- *****************************************************************************
 --                     **                    Random Air Traffic               **
 --                     *********************************************************
+RATArray = {}
+compteur = 0
 for index, ratconfig in ipairs(RATConfig) do
   if ratconfig.enable == true then
+    compteur = compteur +1
     for index_planegroup, planegroupconfig in ipairs(ratconfig.aircrafts_groupconfigs) do
       if planegroupconfig.spawns > 0 then
         local RATGroup = RAT:New(planegroupconfig.templatename)
@@ -371,7 +280,8 @@ for index, ratconfig in ipairs(RATConfig) do
         if planegroupconfig.allow_invisible == true then
           RATGroup:Invisible()
         end
-        RATGroup:Spawn(planegroupconfig.spawns)
+        RATArray[compteur] = RATGroup
+        RATArray[compteur]:Spawn(planegroupconfig.spawns)
       end
     end
     timer.scheduleFunction(function()
@@ -381,5 +291,129 @@ for index, ratconfig in ipairs(RATConfig) do
     timer.scheduleFunction(function()
       trigger.action.outText('Random Air Traffic '..ratconfig.name..' is DISABLED', 10)
     end, nil, timer.getTime() + 8)
+  end
+end
+
+
+-- *****************************************************************************
+--                     **                    SAM Defenses                     **
+--                     *********************************************************
+SAMNetworkArray = {}
+compteur = 0
+for index, mantisconfig in ipairs(MantisConfig) do
+  if mantisconfig.enable == true then
+    compteur = compteur +1
+    env.info('creation Mantis : '.. mantisconfig.name..'...')
+    local objMantis = nil
+    if mantisconfig.dynamic.enable == true then
+      if mantisconfig.dynamic.AwacsTemplateName == '' then
+        mantisconfig.dynamic.AwacsTemplateName = nil
+      else
+        mantisconfig.dynamic.AwacsGroupName = nil
+        for index, awacsObject in ipairs(AwacsArray) do
+          if awacsObject.customconfig.groupName == mantisconfig.dynamic.AwacsTemplateName then
+            env.info('found AWACS linked to template '..mantisconfig.dynamic.AwacsTemplateName..' : it is '..awacsObject.tanker.GroupName)
+            mantisconfig.dynamic.AwacsGroupName = awacsObject.tanker.GroupName
+          end
+        end
+      end
+      objMantis = MANTIS:New(
+              mantisconfig.name,
+              mantisconfig.SAMPrefix,
+              mantisconfig.EWRPrefix,
+              mantisconfig.dynamic.HQGroupName,
+              mantisconfig.coalition,
+              mantisconfig.dynamic.enable,
+              mantisconfig.dynamic.AwacsGroupName)
+      if mantisconfig.dynamic.advanced == true then
+        objMantis:SetAdvancedMode(mantisconfig.dynamic.advanced, mantisconfig.dynamic.ratio)
+      end
+      objMantis:SetAutoRelocate(mantisconfig.dynamic.autorelocate.hq,mantisconfig.dynamic.autorelocate.ewr)
+
+    else
+      objMantis = MANTIS:New(
+              mantisconfig.name,
+              mantisconfig.SAMPrefix,
+              mantisconfig.EWRPrefix,
+              nil,
+              mantisconfig.coalition,
+              false,
+              nil)
+    end
+    objMantis:SetEWRGrouping(mantisconfig.EWRGrouping)
+    objMantis:SetEWRRange(mantisconfig.EWRRange)
+    objMantis:SetSAMRadius(mantisconfig.SAMRadius)
+    objMantis:SetSAMRange(mantisconfig.SAMRange)
+    objMantis:SetDetectInterval(mantisconfig.DetectInterval)
+    objMantis:Debug(mantisconfig.debug)
+    SAMNetworkArray[compteur] = objMantis
+    SAMNetworkArray[compteur]:Start()
+  end
+end
+
+-- *****************************************************************************
+--                     **                    Coalition Squadrons              **
+--                     *********************************************************
+A2AArray = {}
+compteur = 0
+for index, coalitionsquadconfig in ipairs(CoalitionSquadrons) do
+  if coalitionsquadconfig.enable == true then
+    compteur = compteur +1
+    if not(coalitionsquadconfig.AwacsTemplateName == '') then
+      for index, awacsObject in ipairs(AwacsArray) do
+        if awacsObject.customconfig.groupName == coalitionsquadconfig.AwacsTemplateName then
+          env.info('found AWACS linked to template '..coalitionsquadconfig.AwacsTemplateName..' : it is '..awacsObject.tanker.GroupName)
+          table.insert(coalitionsquadconfig.detectionprefixarray,awacsObject.tanker.GroupName)
+        end
+      end
+    end
+    local DispatcherObject = AI_A2A_DISPATCHER:New(
+            DETECTION_AREAS:New(
+                    SET_GROUP:New()
+                             :FilterPrefixes(coalitionsquadconfig.detectionprefixarray)
+                             :FilterStart(),
+                    coalitionsquadconfig.groupingrange)
+    )
+                                              :SetDefaultFuelThreshold(coalitionsquadconfig.fuelthreshold)
+                                              :SetDefaultLanding(coalitionsquadconfig.landingtype)
+                                              :SetDefaultTakeoff(coalitionsquadconfig.takeofftype)
+                                              :SetDefaultCapLimit(coalitionsquadconfig.cappatrolpersquadron)
+                                              :SetDefaultGrouping(coalitionsquadconfig.defaultpatrolgrouping)
+                                              :SetEngageRadius(coalitionsquadconfig.engageradius)
+                                              :SetDisengageRadius(coalitionsquadconfig.abortradius)
+                                              :SetGciRadius(coalitionsquadconfig.gciradius)
+    if not(coalitionsquadconfig.bordersgroup == '' or coalitionsquadconfig.bordersgroup == nil) then
+      DispatcherObject = DispatcherObject:SetBorderZone(
+              ZONE_POLYGON:New(coalitionsquadconfig.bordersgroup,
+                      GROUP:FindByName(coalitionsquadconfig.bordersgroup)
+              )
+      )
+    end
+    for index, squadconfig in ipairs(coalitionsquadconfig.squadrons) do
+      if squadconfig.enable then
+        DispatcherObject:SetSquadron(
+                squadconfig.name,
+                squadconfig.base,
+                squadconfig.templatearray,
+                math.floor(squadconfig.numberofsplanes*squadconfig.availabilityrate)
+        )
+        if not(squadconfig.landingtype == '' or squadconfig.landingtype == nil) then
+          DispatcherObject:SetSquadronLanding(squadconfig.name,squadconfig.landingtype)
+        end
+        if not(squadconfig.takeofftype == '' or squadconfig.takeofftype == nil) then
+          DispatcherObject:SetSquadronTakeoff(squadconfig.name,squadconfig.takeofftype)
+        end
+        if (squadconfig.capzonegroup == '' or squadconfig.capzonegroup == nil) then
+          DispatcherObject:SetSquadronGci(squadconfig.name, 900, 2500)
+        else
+          squadconfig.CAPZone = ZONE_POLYGON:New(squadconfig.name .. 'CAPZone', GROUP:FindByName(squadconfig.capzonegroup))
+          DispatcherObject:SetSquadronCap(squadconfig.name, squadconfig.CAPZone, 15000, 25000, 500, 600, 150, 2500, "BARO")
+          DispatcherObject:SetSquadronCapInterval(squadconfig.name, 1, 2*60, 15*60)
+        end
+      end
+    end
+    DispatcherObject:SetTacticalDisplay(coalitionsquadconfig.debug)
+    A2AArray[compteur] = DispatcherObject
+    A2AArray[compteur]:Start()
   end
 end

@@ -1,0 +1,18 @@
+Objectifs :
+  * Escorter le groupe de B1 pour sa frappe sur Lavan Island.
+  * Mener une frappe chirurgicale pour détruire les 8 bombes stockées à Lavan Island en attente de transport.
+
+
+USS Stennis : 51X STN ICLS10   Com: 126.5 AM
+USS Bush : 52X BSH ICLS11 Com: 127.5 AM
+
+Texaco : KC135MPRS West 15Y FL250 Com: 264.00 AM
+Shell: KC135MPRS East 17Y FL250 Com: 264.00 AM
+Arco: KC135 Center 16Y FL150 Com: 262.00 AM
+Total: KC135 Center 18Y FL250 Com: 262.00 AM
+
+E-3 : Darkstar FL350 265.00AM
+E-2 : Magic FL270 265.00AM
+
+Bulls:
+N27.13.14    E56.22.35

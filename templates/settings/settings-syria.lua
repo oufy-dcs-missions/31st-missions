@@ -1,6 +1,7 @@
 -- *****************************************************************************
 -- *                         AIRBOSS settings                                  *
 -- *****************************************************************************
+
 AirBossConfig = {
     {
         enable = true,
@@ -33,6 +34,7 @@ AirBossConfig = {
             enable = true,
             duration = 30,
             windondeck = 20,
+            offset = 20,
             uturn = true
         },
         releayunit = {
@@ -335,5 +337,128 @@ AwacsConfig = {
             name = CALLSIGN.AWACS.Overlord,
             number = 1
         }
+    }
+}
+
+CoalitionSquadrons = {
+    {
+        enable = false,
+        bordersgroup = 'tiberiasse_etendue',
+        takeofftype = AI_A2A_DISPATCHER.Takeoff.Cold,
+        landingtype = AI_A2A_DISPATCHER.Landing.AtEngineShutdown,
+        detectionprefixarray = {'EWR RED'},
+        AwacsTemplateName = 'A50_template',
+        groupingrange = 30000,
+        engageradius = 150000,
+        abortradius = 300000,
+        gciradius = 250000,
+        fuelthreshold = 0.25,
+        cappatrolpersquadron = 1,
+        defaultpatrolgrouping = 2,
+        debug = false,
+        squadrons = {
+            {
+                enable = true,
+                name = 'PalmyreF4',
+                base = AIRBASE.Syria.Palmyra,
+                templatearray = {'F4_template'},
+                numberofsplanes = 18,
+                availabilityrate = 0.6
+            },
+            {
+                enable = true,
+                name = 'PalmyreF4CAP',
+                base = AIRBASE.Syria.Palmyra,
+                templatearray = {'F4_template'},
+                numberofsplanes = 6,
+                availabilityrate = 0.6,
+                capzonegroup = 'tiberiasse'
+            },
+            {
+                enable = true,
+                name = 'PalmyreA4',
+                base = AIRBASE.Syria.Palmyra,
+                templatearray = {'A4_template'},
+                numberofsplanes = 8,
+                availabilityrate = 0.6
+            },
+            {
+                enable = true,
+                name = 'PalmyreA4CAP',
+                base = AIRBASE.Syria.Palmyra,
+                templatearray = {'A4_template'},
+                numberofsplanes = 4,
+                availabilityrate = 0.6
+            },
+            {
+                enable = true,
+                name = 'Ramat_David_intercept',
+                base = AIRBASE.Syria.Ramat_David,
+                templatearray = {'F16_template'},
+                takeofftype = AI_A2A_DISPATCHER.Takeoff.Runway,
+                landingtype = AI_A2A_DISPATCHER.Landing.NearAirbase,
+                numberofsplanes = 10,
+                availabilityrate = 0.6
+            },
+            {
+                enable = true,
+                name = 'Ramat_David_cap',
+                base = AIRBASE.Syria.Ramat_David,
+                templatearray = {'F16_template'},
+                takeofftype = AI_A2A_DISPATCHER.Takeoff.Runway,
+                landingtype = AI_A2A_DISPATCHER.Landing.NearAirbase,
+                numberofsplanes = 6,
+                availabilityrate = 0.6,
+                capzonegroup = 'tiberiasse'
+            },
+            {
+                enable = true,
+                name = 'Mezzeh',
+                base = AIRBASE.Syria.Mezzeh,
+                templatearray = {'F15_template'},
+                takeofftype = AI_A2A_DISPATCHER.Takeoff.Runway,
+                landingtype = AI_A2A_DISPATCHER.Landing.AtRunway,
+                numberofsplanes = 6,
+                availabilityrate = 0.6
+            },
+            {
+                enable = true,
+                name = 'Mezzeh_CAP',
+                base = AIRBASE.Syria.Mezzeh,
+                templatearray = {'F15_template'},
+                takeofftype = AI_A2A_DISPATCHER.Takeoff.Runway,
+                landingtype = AI_A2A_DISPATCHER.Landing.AtRunway,
+                numberofsplanes = 2,
+                availabilityrate = 0.6,
+                capzonegroup = 'tiberiasse'
+            }
+        }
+    }
+}
+
+MantisConfig = {
+    {
+        enable = false,
+        debug = false,
+        name = 'tiberiasse',
+        coalition = 'red',
+        EWRPrefix = 'EWR RED',
+        SAMPrefix = 'SAM RED',
+        dynamic = {
+            enable = true,
+            HQGroupName = 'HQ RED-1',
+            AwacsTemplateName = 'A50_template',
+            advanced = true,
+            ratio = 80,
+            autorelocate = {
+                hq = true,
+                ewr = true
+            }
+        },
+        EWRGrouping = 5000,
+        EWRRange = 400000,
+        SAMRadius = 40000,
+        SAMRange = 60,
+        DetectInterval = 30
     }
 }
