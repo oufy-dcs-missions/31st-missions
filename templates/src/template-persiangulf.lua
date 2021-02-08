@@ -300,54 +300,122 @@ end
 --                     *********************************************************
 SAMNetworkArray = {}
 compteur = 0
-for index, mantisconfig in ipairs(MantisConfig) do
-  if mantisconfig.enable == true then
+for index, iadsconfig in ipairs(IADSConfig) do
+  if iadsconfig.enable == true then
     compteur = compteur +1
-    env.info('creation Mantis : '.. mantisconfig.name..'...')
-    local objMantis = nil
-    if mantisconfig.dynamic.enable == true then
-      if mantisconfig.dynamic.AwacsTemplateName == '' then
-        mantisconfig.dynamic.AwacsTemplateName = nil
-      else
-        mantisconfig.dynamic.AwacsGroupName = nil
-        for index, awacsObject in ipairs(AwacsArray) do
-          if awacsObject.customconfig.groupName == mantisconfig.dynamic.AwacsTemplateName then
-            env.info('found AWACS linked to template '..mantisconfig.dynamic.AwacsTemplateName..' : it is '..awacsObject.tanker.GroupName)
-            mantisconfig.dynamic.AwacsGroupName = awacsObject.tanker.GroupName
+    env.info('creation Skynet IADS : '.. iadsconfig.name..'...')
+    local objSkynet = SkynetIADS:create(iadsconfig.name)
+    local skynetDebug = objSkynet:getDebugSettings()
+    skynetDebug.IADSStatus = iadsconfig.debug
+    skynetDebug.radarWentDark = iadsconfig.debug
+    skynetDebug.contacts = iadsconfig.debug
+    skynetDebug.radarWentLive = iadsconfig.debug
+    skynetDebug.noWorkingCommmandCenter = iadsconfig.debug
+    skynetDebug.ewRadarNoConnection = iadsconfig.debug
+    skynetDebug.samNoConnection = iadsconfig.debug
+    skynetDebug.jammerProbability = iadsconfig.debug
+    skynetDebug.addedEWRadar = iadsconfig.debug
+    skynetDebug.hasNoPower = iadsconfig.debug
+    skynetDebug.harmDefence = iadsconfig.debug
+    skynetDebug.samSiteStatusEnvOutput = iadsconfig.debug
+    skynetDebug.earlyWarningRadarStatusEnvOutput = iadsconfig.debug
+    skynetDebug.commandCenterStatusEnvOutput = iadsconfig.debug
+    if iadsconfig.debug then
+      objSkynet:addRadioMenu()
+    end
+    if iadsconfig.AwacsTemplateName == '' then
+      iadsconfig.AwacsTemplateName = nil
+    else
+      iadsconfig.AwacsGroupName = nil
+      for index, awacsObject in ipairs(AwacsArray) do
+        if awacsObject.customconfig.groupName == iadsconfig.AwacsTemplateName then
+          env.info('IADS found AWACS linked to template '.. iadsconfig.AwacsTemplateName..' : it is '..GROUP:FindByName(awacsObject.tanker.GroupName):GetUnit(1):Name())
+          iadsconfig.AwacsGroupName = awacsObject.tanker.GroupName
+          objSkynet:addEarlyWarningRadar(GROUP:FindByName(awacsObject.tanker.GroupName):GetUnit(1):Name())
+        end
+      end
+    end
+    objSkynet:addEarlyWarningRadarsByPrefix(iadsconfig.EWRPrefix)
+    objSkynet:addSAMSitesByPrefix(iadsconfig.SAMPrefix)
+    objSkynet:addCommandCenter(GROUP:FindByName(iadsconfig.CommandCenterGroup):GetDCSObject())
+
+    env.info('IADS : Configuring network nodes')
+    if not( iadsconfig.interconnectionsconfig.EWR == nil or iadsconfig.interconnectionsconfig.EWR == {}) then
+      for indexindex, ewr_netconfig in ipairs(iadsconfig.interconnectionsconfig.EWR) do
+        if not(ewr_netconfig.powerstatic =='' or ewr_netconfig.powerstatic == nil) then
+          objSkynet:getEarlyWarningRadarByUnitName(ewr_netconfig.unitname):addPowerSource(STATIC:FindByName(ewr_netconfig.powerstatic):GetDCSObject())
+          env.info('IADS : add power to EWR '.. ewr_netconfig.unitname..' from static '.. ewr_netconfig.powerstatic)
+        end
+        if not(ewr_netconfig.communicationstatic =='' or ewr_netconfig.communicationstatic == nil) then
+          objSkynet:getEarlyWarningRadarByUnitName(ewr_netconfig.unitname):addConnectionNode(STATIC:FindByName(ewr_netconfig.communicationstatic):GetDCSObject())
+          env.info('IADS : add communication node to EWR '.. ewr_netconfig.unitname..' from static '.. ewr_netconfig.communicationstatic)
+        end
+        if not(ewr_netconfig.pointdefensegroupname =='' or ewr_netconfig.pointdefensegroupname == nil) then
+          objSkynet:getEarlyWarningRadarByUnitName(ewr_netconfig.unitname):addPointDefence(objSkynet:getSAMSiteByGroupName(ewr_netconfig.pointdefensegroupname))
+          env.info('IADS : add point defense node to EWR '.. ewr_netconfig.unitname..' from SAM Site '.. ewr_netconfig.pointdefensegroupname)
+        end
+      end
+    end
+    if not(iadsconfig.interconnectionsconfig.SAM == nil or iadsconfig.interconnectionsconfig.SAM == {}) then
+      for indexindex, sam_netconfig in ipairs(iadsconfig.interconnectionsconfig.SAM) do
+        objSkynet:getSAMSiteByGroupName(sam_netconfig.groupname):setActAsEW(sam_netconfig.isew)
+        if not(sam_netconfig.powerstatic == '' or sam_netconfig.powerstatic == nil) then
+          objSkynet:getSAMSiteByGroupName(sam_netconfig.groupname):addPowerSource(STATIC:FindByName(sam_netconfig.powerstatic):GetDCSObject())
+          env.info('IADS : add power to SAM Site '.. sam_netconfig.groupname..' from static '.. sam_netconfig.powerstatic)
+        end
+        if not(sam_netconfig.communicationstatic =='' or sam_netconfig.communicationstatic == nil) then
+          objSkynet:getSAMSiteByGroupName(sam_netconfig.groupname):addConnectionNode(STATIC:FindByName(sam_netconfig.communicationstatic):GetDCSObject())
+          env.info('IADS : add communication node to SAM '.. sam_netconfig.groupname..' from static '.. sam_netconfig.communicationstatic)
+        end
+        if not(sam_netconfig.pointdefensegroupname =='' or sam_netconfig.pointdefensegroupname == nil) then
+          objSkynet:getSAMSiteByGroupName(sam_netconfig.groupname):addPointDefence(objSkynet:getSAMSiteByGroupName(sam_netconfig.pointdefensegroupname))
+          objSkynet:getSAMSiteByGroupName(sam_netconfig.groupname):setIgnoreHARMSWhilePointDefencesHaveAmmo(true)
+          env.info('IADS : add point defense node to SAM '.. sam_netconfig.groupname..' from SAM Site '.. sam_netconfig.pointdefensegroupname)
+        end
+      end
+    end
+    if not(iadsconfig.interconnectionsconfig.HQ == nil or iadsconfig.interconnectionsconfig.HQ == {}) then
+      for indexindex, hq_netconfig in ipairs(iadsconfig.interconnectionsconfig.HQ) do
+        if not(hq_netconfig.powerstatic == '' or hq_netconfig.powerstatic == nil) then
+          local HQTable = objSkynet:getCommandCenters()
+          for index, hqgroup in ipairs(HQTable) do
+            if hqgroup:getDCSName() == hq_netconfig.groupname then
+              if not(hq_netconfig.powerstatic =='' or hq_netconfig.powerstatic == nil) then
+                hqgroup:addPowerSource(STATIC:FindByName(hq_netconfig.powerstatic):GetDCSObject())
+                env.info('IADS : add power to Command Center Site '.. hq_netconfig.groupname..' from static '.. hq_netconfig.powerstatic)
+              end
+              if not(hq_netconfig.communicationstatic == {} or hq_netconfig.communicationstatic == nil) then
+                for index, commstatic in ipairs(hq_netconfig.communicationstatic) do
+                  hqgroup:addConnectionNode(STATIC:FindByName(commstatic):GetDCSObject())
+                  env.info('IADS : add communication node to Command Center Site '.. hq_netconfig.groupname..' from static '.. commstatic)
+                end
+              end
+              if not(hq_netconfig.pointdefensegroupname =='' or hq_netconfig.pointdefensegroupname == nil) then
+                hqgroup:addPointDefence(objSkynet:getSAMSiteByGroupName(hq_netconfig.pointdefensegroupname))
+                env.info('IADS : add point defense node to CommandCenter '.. hq_netconfig.groupname..' from SAM Site '.. hq_netconfig.pointdefensegroupname)
+              end
+
+            end
           end
         end
       end
-      objMantis = MANTIS:New(
-              mantisconfig.name,
-              mantisconfig.SAMPrefix,
-              mantisconfig.EWRPrefix,
-              mantisconfig.dynamic.HQGroupName,
-              mantisconfig.coalition,
-              mantisconfig.dynamic.enable,
-              mantisconfig.dynamic.AwacsGroupName)
-      if mantisconfig.dynamic.advanced == true then
-        objMantis:SetAdvancedMode(mantisconfig.dynamic.advanced, mantisconfig.dynamic.ratio)
-      end
-      objMantis:SetAutoRelocate(mantisconfig.dynamic.autorelocate.hq,mantisconfig.dynamic.autorelocate.ewr)
-
-    else
-      objMantis = MANTIS:New(
-              mantisconfig.name,
-              mantisconfig.SAMPrefix,
-              mantisconfig.EWRPrefix,
-              nil,
-              mantisconfig.coalition,
-              false,
-              nil)
     end
-    objMantis:SetEWRGrouping(mantisconfig.EWRGrouping)
-    objMantis:SetEWRRange(mantisconfig.EWRRange)
-    objMantis:SetSAMRadius(mantisconfig.SAMRadius)
-    objMantis:SetSAMRange(mantisconfig.SAMRange)
-    objMantis:SetDetectInterval(mantisconfig.DetectInterval)
-    objMantis:Debug(mantisconfig.debug)
-    SAMNetworkArray[compteur] = objMantis
-    SAMNetworkArray[compteur]:Start()
+    for index, samsite in ipairs(objSkynet:getSAMSites()) do
+      samsite:setAutonomousBehaviour(SkynetIADSAbstractRadarElement.AUTONOMOUS_STATE_DARK)
+      samsite:setEngagementZone(SkynetIADSAbstractRadarElement.GO_LIVE_WHEN_IN_KILL_ZONE)
+      if not(iadsconfig.SAMRange == nil or iadsconfig.SAMRange == 0) then
+        samsite:setGoLiveRangeInPercent(iadsconfig.SAMRange)
+      end
+      if not(iadsconfig.HARMDetectionChance == nil or iadsconfig.HARMDetectionChance == 0) then
+        samsite:setHARMDetectionChance(iadsconfig.HARMDetectionChance)
+      end
+    end
+    if not(iadsconfig.DetectInterval == nil or iadsconfig.DetectInterval == 0) then
+      objSkynet:setUpdateInterval(iadsconfig.DetectInterval)
+    end
+    SAMNetworkArray[compteur] = objSkynet
+    --SAMNetworkArray[compteur]:activate()
+    SAMNetworkArray[compteur]:setupSAMSitesAndThenActivate()
   end
 end
 
@@ -362,7 +430,7 @@ for index, coalitionsquadconfig in ipairs(CoalitionSquadrons) do
     if not(coalitionsquadconfig.AwacsTemplateName == '') then
       for index, awacsObject in ipairs(AwacsArray) do
         if awacsObject.customconfig.groupName == coalitionsquadconfig.AwacsTemplateName then
-          env.info('found AWACS linked to template '..coalitionsquadconfig.AwacsTemplateName..' : it is '..awacsObject.tanker.GroupName)
+          env.info('A2ADispatch : found AWACS linked to template '..coalitionsquadconfig.AwacsTemplateName..' : it is '..awacsObject.tanker.GroupName)
           table.insert(coalitionsquadconfig.detectionprefixarray,awacsObject.tanker.GroupName)
         end
       end
@@ -403,11 +471,15 @@ for index, coalitionsquadconfig in ipairs(CoalitionSquadrons) do
         if not(squadconfig.takeofftype == '' or squadconfig.takeofftype == nil) then
           DispatcherObject:SetSquadronTakeoff(squadconfig.name,squadconfig.takeofftype)
         end
-        if (squadconfig.capzonegroup == '' or squadconfig.capzonegroup == nil) then
-          DispatcherObject:SetSquadronGci(squadconfig.name, 900, 2500)
+        if ((squadconfig.capzonegroup == '' or squadconfig.capzonegroup == nil) and (squadconfig.capzone == '' or squadconfig.capzone == nil)) then
+          DispatcherObject:SetSquadronGci2(squadconfig.name, 920, 3000, 30, 14000, 'BARO')
         else
-          squadconfig.CAPZone = ZONE_POLYGON:New(squadconfig.name .. 'CAPZone', GROUP:FindByName(squadconfig.capzonegroup))
-          DispatcherObject:SetSquadronCap(squadconfig.name, squadconfig.CAPZone, 15000, 25000, 500, 600, 150, 2500, "BARO")
+          if (squadconfig.capzone == '' or squadconfig.capzone == nil) then
+            squadconfig.CAPZone = ZONE_POLYGON:New(squadconfig.name .. 'CAPZone', GROUP:FindByName(squadconfig.capzonegroup))
+          else
+            squadconfig.CAPZone = ZONE:New(squadconfig.capzone)
+          end
+          DispatcherObject:SetSquadronCap2(squadconfig.name, 740, 3000, 30, 14000, 'BARO', squadconfig.CAPZone, 400, 900, 4500, 9100, 'BARO')
           DispatcherObject:SetSquadronCapInterval(squadconfig.name, 1, 2*60, 15*60)
         end
       end

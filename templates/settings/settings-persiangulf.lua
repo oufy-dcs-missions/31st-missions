@@ -412,7 +412,7 @@ AwacsConfig = {
 
 CoalitionSquadrons = {
     {
-        enable = false,
+        enable = true,
         bordersgroup = 'Iran',
         takeofftype = AI_A2A_DISPATCHER.Takeoff.Cold,
         landingtype = AI_A2A_DISPATCHER.Landing.AtEngineShutdown,
@@ -425,7 +425,7 @@ CoalitionSquadrons = {
         fuelthreshold = 0.25,
         cappatrolpersquadron = 1,
         defaultpatrolgrouping = 2,
-        debug = false,
+        debug = true,
         squadrons = {
             {
                 enable = true,
@@ -434,7 +434,7 @@ CoalitionSquadrons = {
                 templatearray = {'F14_template'},
                 numberofsplanes = 4,
                 availabilityrate = 0.4,
-                capzonegroup = 'Iran'
+                capzone = 'CAPKerman'
             },
             {
                 enable = true,
@@ -451,7 +451,7 @@ CoalitionSquadrons = {
                 templatearray = {'F14_template'},
                 numberofsplanes = 4,
                 availabilityrate = 0.4,
-                capzonegroup = 'Iran'
+                capzone = 'CAPLar'
             },
             {
                 enable = true,
@@ -484,16 +484,18 @@ CoalitionSquadrons = {
                 templatearray = {'F4_template'},
                 numberofsplanes = 12,
                 availabilityrate = 0.35,
-                capzonegroup = 'Iran'
+                capzone = 'CAPAvadaria'
             },
             {
                 enable = true,
                 name = 'JiroftF4CAP',
                 base = AIRBASE.PersianGulf.Jiroft_Airport,
                 templatearray = {'F4_template'},
+                takeofftype = AI_A2A_DISPATCHER.Takeoff.Runway,
+                landingtype = AI_A2A_DISPATCHER.Landing.AtRunway,
                 numberofsplanes = 12,
                 availabilityrate = 0.35,
-                capzonegroup = 'Iran'
+                capzone = 'CAPJiroft'
             },
             {
                 enable = true,
@@ -502,7 +504,7 @@ CoalitionSquadrons = {
                 templatearray = {'F4_template'},
                 numberofsplanes = 12,
                 availabilityrate = 0.35,
-                capzonegroup = 'Iran'
+                capzone = 'CAPShiraz'
             },
             {
                 enable = true,
@@ -559,13 +561,14 @@ CoalitionSquadrons = {
                 templatearray = {'Mig29_template'},
                 numberofsplanes = 6,
                 availabilityrate = 0.6,
-                capzonegroup = 'Iran'
+                capzone = 'CAPKerman'
             },
             {
                 enable = true,
                 name = 'JiroftMig29Intercept',
                 base = AIRBASE.PersianGulf.Jiroft_Airport,
                 templatearray = {'Mig29_template'},
+                landingtype = AI_A2A_DISPATCHER.Landing.AtRunway,
                 numberofsplanes = 4,
                 availabilityrate = 0.6
             },
@@ -574,37 +577,340 @@ CoalitionSquadrons = {
                 name = 'JiroftMig29CAP',
                 base = AIRBASE.PersianGulf.Jiroft_Airport,
                 templatearray = {'Mig29_template'},
+                takeofftype = AI_A2A_DISPATCHER.Takeoff.Runway,
+                landingtype = AI_A2A_DISPATCHER.Landing.AtRunway,
                 numberofsplanes = 4,
                 availabilityrate = 0.6,
-                capzonegroup = 'Iran'
+                capzone = 'CAPBandarEJask'
             }
         }
     }
 }
 
-MantisConfig = {
+IADSConfig = {
     {
         enable = true,
         debug = false,
-        name = 'iraniandefense',
-        coalition = 'red',
-        EWRPrefix = 'EWR IRAN',
-        SAMPrefix = 'SAM IRAN',
-        dynamic = {
-            enable = true,
-            HQGroupName = 'HQ IRAN-1',
-            AwacsTemplateName = 'A50_template',
-            advanced = true,
-            ratio = 80,
-            autorelocate = {
-                hq = false,
-                ewr = false
+        name = 'defense_EST',
+        EWRPrefix = 'EWR_IRAN_EST',
+        SAMPrefix = 'SAM_IRAN_EST',
+        CommandCenterGroup = 'HQ_IRAN_EST-1',
+        interconnectionsconfig = {
+            EWR = {
+                {
+                    unitname = 'EWR_IRAN_EST-2-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-1',
+                    pointdefensegroupname = 'SAM_IRAN_EST_POINTDEF-2'
+                },
+                {
+                    unitname = 'EWR_IRAN_EST-3-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-8',
+                    pointdefensegroupname = 'SAM_IRAN_EST_POINTDEF-5'
+                },
+                {
+                    unitname = 'EWR_IRAN_EST-1-1',
+                    communicationstatic = 'IADSComm-2',
+                    powerstatic = 'IADSGPU-6',
+                    pointdefensegroupname = 'SAM_IRAN_EST_POINTDEF-1'
+                }
+            },
+            SAM = {
+                {
+                    groupname = 'SAM_IRAN_EST_SA2-3',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-2',
+                    pointdefensegroupname = 'SAM_IRAN_EST_POINTDEF-3',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_EST_SA6-1',
+                    communicationstatic = 'IADSComm-1',
+                    powerstatic = 'IADSGPU-3',
+                    pointdefensegroupname = 'SAM_IRAN_EST_POINTDEF-4',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_EST_SA11-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-4',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_EST_SA10-1',
+                    communicationstatic = 'IADSComm-2',
+                    powerstatic = 'IADSGPU-5',
+                    pointdefensegroupname = '',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_IRAN_EST_MOBILE-1',
+                    communicationstatic = 'IADSComm-2',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_EST_MOBILE-2',
+                    communicationstatic = 'IADSComm-2',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                }
+            },
+            HQ = {
+                {
+                    groupname = 'HQ_IRAN_EST-1',
+                    communicationstatic = {
+                        'IADSComm-1',
+                        'IADSComm-2',
+                    },
+                    powerstatic = 'IADSGPU-1',
+                    pointdefensegroupname = ''
+                }
             }
         },
-        EWRGrouping = 5000,
-        EWRRange = 800000,
-        SAMRadius = 40000,
+        AwacsTemplateName = 'A50_template',
+        SAMRange = 85,
+        HARMDetectionChance = 50,
+        DetectInterval = 0
+    },
+    {
+        enable = true,
+        debug = false,
+        name = 'defense_NORD',
+        EWRPrefix = 'EWR_IRAN_NORD',
+        SAMPrefix = 'SAM_IRAN_NORD',
+        CommandCenterGroup = 'HQ_IRAN_NORD-1',
+        interconnectionsconfig = {
+            EWR = {
+                {
+                    unitname = 'EWR_IRAN_NORD-1-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-7',
+                    pointdefensegroupname = 'SAM_IRAN_NORD_POINTDEF-1'
+                },
+                {
+                    unitname = 'EWR_IRAN_NORD-2-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-9',
+                    pointdefensegroupname = 'SAM_IRAN_NORD_POINTDEF-2'
+                }
+            },
+            SAM = {
+                {
+                    groupname = 'SAM_IRAN_NORD_SA2-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-10',
+                    pointdefensegroupname = 'SAM_IRAN_NORD_POINTDEF-3',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_NORD_SA10-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-11',
+                    pointdefensegroupname = 'SAM_IRAN_NORD_POINTDEF-4',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_IRAN_NORD_MOBILE-1',
+                    communicationstatic = '',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                }
+            },
+            HQ = {
+                {
+                    groupname = 'HQ_IRAN_NORD-1',
+                    communicationstatic = {
+                        'IADSComm-3'
+                    },
+                    powerstatic = '',
+                    pointdefensegroupname = ''
+                }
+            }
+        },
+        AwacsTemplateName = 'A50_template',
+        SAMRange = 85,
+        HARMDetectionChance = 60,
+        DetectInterval = 0
+    },
+    {
+        enable = true,
+        debug = false,
+        name = 'defense_OUEST',
+        EWRPrefix = 'EWR_IRAN_OUEST',
+        SAMPrefix = 'SAM_IRAN_OUEST',
+        CommandCenterGroup = 'HQ_IRAN_OUEST-1',
+        interconnectionsconfig = {
+            EWR = {
+                {
+                    unitname = 'EWR_IRAN_OUEST-1-1',
+                    communicationstatic = 'IADSComm-4',
+                    powerstatic = 'IADSGPU-13',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-1'
+                },
+                {
+                    unitname = 'EWR_IRAN_OUEST-2-1',
+                    communicationstatic = 'IADSComm-5',
+                    powerstatic = 'IADSGPU-14',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-2'
+                },
+                {
+                    unitname = 'EWR_IRAN_OUEST-3-1',
+                    communicationstatic = 'IADSComm-6',
+                    powerstatic = 'IADSGPU-12',
+                    pointdefensegroupname = ''
+                },
+                {
+                    unitname = 'EWR_IRAN_OUEST-4-1',
+                    communicationstatic = 'IADSComm-7',
+                    powerstatic = 'IADSGPU-15',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-3'
+                }
+            },
+            SAM = {
+                {
+                    groupname = 'SAM_IRAN_OUEST_HAWK-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-18',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-4',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_HAWK-2',
+                    communicationstatic = 'IADSComm-9',
+                    powerstatic = 'IADSGPU-19',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-5',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_MOBILE-1',
+                    communicationstatic = '',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_MOBILE-2',
+                    communicationstatic = 'IADSComm-8',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_SA10-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-20',
+                    pointdefensegroupname = '',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_SA2-1',
+                    communicationstatic = 'IADSComm-10',
+                    powerstatic = 'IADSGPU-16',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-6',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_SA2-2',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-17',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_OUEST_SA6-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-21',
+                    pointdefensegroupname = 'SAM_IRAN_OUEST_POINTDEF-7',
+                    isew = false
+                }
+            },
+            HQ = {
+                {
+                    groupname = 'HQ_IRAN_OUEST-1',
+                    communicationstatic = {
+                        'IADSComm-8'
+                    },
+                    powerstatic = '',
+                    pointdefensegroupname = ''
+                }
+            }
+        },
+        AwacsTemplateName = 'A50_template',
         SAMRange = 75,
-        DetectInterval = 30
+        HARMDetectionChance = 40,
+        DetectInterval = 0
+    },
+    {
+        enable = true,
+        debug = false,
+        name = 'defense_SUD',
+        EWRPrefix = 'EWR_IRAN_SUD',
+        SAMPrefix = 'SAM_IRAN_SUD',
+        CommandCenterGroup = 'HQ_IRAN_SUD-1',
+        interconnectionsconfig = {
+            EWR = {
+                {
+                    unitname = 'EWR_IRAN_SUD-1-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-22',
+                    pointdefensegroupname = 'SAM_IRAN_SUD_POINTDEF-2'
+                },
+                {
+                    unitname = 'EWR_IRAN_SUD-2-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-23',
+                    pointdefensegroupname = ''
+                },
+                {
+                    unitname = 'EWR_IRAN_SUD-3-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-26',
+                    pointdefensegroupname = 'SAM_IRAN_SUD_POINTDEF-5'
+                }
+            },
+            SAM = {
+                {
+                    groupname = 'SAM_IRAN_SUD_MOBILE-2',
+                    communicationstatic = 'IADSComm-12',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_SUD_SA2-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-25',
+                    pointdefensegroupname = 'SAM_IRAN_SUD_POINTDEF-3',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_IRAN_SUD_SA6-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-24',
+                    pointdefensegroupname = 'SAM_IRAN_SUD_POINTDEF-4',
+                    isew = false
+                }
+            },
+            HQ = {
+                {
+                    groupname = 'HQ_IRAN_SUD-1',
+                    communicationstatic = {
+                        'IADSComm-11'
+                    },
+                    powerstatic = '',
+                    pointdefensegroupname = 'SAM_IRAN_SUD_POINTDEF-1'
+                }
+            }
+        },
+        AwacsTemplateName = 'A50_template',
+        SAMRange = 75,
+        HARMDetectionChance = 45,
+        DetectInterval = 0
     }
 }
