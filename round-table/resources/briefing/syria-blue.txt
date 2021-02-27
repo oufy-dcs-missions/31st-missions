@@ -1,0 +1,90 @@
+RADIOS
+--//--LHA-1 Tarawa--//--
+Radio: 127.500
+Tacan: 75X
+ICLS: 15
+--//----------//--    
+
+--//--CVN-74 Stennis--//-- 
+Radio: 127.500 
+Tacan: 74X
+ICLS : 14
+
+--//--CVN-73 George Washington--//-- 
+Radio: 127.500 
+Tacan: 73X
+ICLS : 13
+
+[[-Incirlik-]]
+Radio: 129.400 / 360.100
+--//----------//--    
+
+--//--Supports--//-- 
+[[-Awacs-E2]]
+Radio: Silver2 - Wizzard
+TACAN 26Y - WIZ
+20.000 Ft
+
+[[-Awacs-E3]]
+Radio: Silver1 - Overlord
+TACAN 27Y - OVR
+37.000 Ft
+
+[[-Tanker (Boom)-]]
+Radio: Olive1 - Shell
+TACAN 24Y - SHL
+19.000 Ft // 360 Kts
+
+Radio: Olive3 - Texaco
+TACAN 28Y - TEX
+14.000 Ft // 250 Kts
+
+
+[[-Tanker (Basket)-]]
+Radio: Olive2 - Arco
+TACAN 25Y - ARC
+28.000 Ft // 400 Kts
+
+
+[[-HATAY AB (HB)-]]
+Radio: 38.550 AM / 128.500 AM / 250.150 / 3.825 AM
+LAT/LONG: N36º 21' 48'' - E36º 17' 26''
+TACAN: 55X - HTY
+
+[[-FARP MADRID-]]
+Radio: 210.000 AM 
+LAT/LONG: N36º 36' 59'' - E36º 26' 34''
+TACAN: 50X - MDD
+
+[[-FARP DUBLIN-]]
+Radio: 220.000 AM
+LAT/LONG: N36º 21' 4'' - E36º 42' 46''
+TACAN: 51X - DBN
+
+[[-FARP MOSCU-]]
+Radio: 230.000 AM
+LAT/LONG: N36º 12' 33'' - E36º 20' 4''
+TACAN: 52X - MSU
+
+[[-FARP BERLIN-]]
+Radio: 240.000 AM
+LAT/LONG: N36º 8' 56'' - E36º 1' 43''
+TACAN: 53X - BRN
+
+[[-FARP DALLAS-]]
+Radio: 250.000 AM 
+LAT/LONG: N36º 6' 36'' - E36º 43' 30''
+TACAN: 54X - DLS
+--//------------//-- 
+
+ALL FF PLANES 
+WP1 = Bullseye
+WP2 = AO / Editable WPT (F16C TGP)
+WP3 = Landing
+
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+
+--//-- ENHANCED GAME MASTER SCRIPT --//--
+Please read the "Manual_Gamemaster" 

@@ -204,7 +204,7 @@ TankersConfig = {
     {
         enable = true,
         autorespawn = true,
-        patternUnit = 'CVW-7-8',
+        patternUnit = 'CVW-7-6',
         baseUnit = 'CVW-7-1',
         terminalType = AIRBASE.TerminalType.OpenMedOrBig,
         groupName = 'shell-1',
@@ -216,7 +216,7 @@ TankersConfig = {
             channel = 14,
             morse = 'SHL',
         },
-        freq = 264,
+        freq = 264.250,
         fuelwarninglevel = 15,
         racetrack = {
             front = 40,
@@ -297,7 +297,7 @@ TankersConfig = {
             channel = 101,
             morse = 'TEX',
         },
-        freq = 264,
+        freq = 129.250,
         fuelwarninglevel = 20,
         racetrack = {
             front = 60,
@@ -391,7 +391,7 @@ AwacsConfig = {
         escortgroupname = 'escort_F14',
         altitude = 34500,
         speed = 430,
-        freq = 261,
+        freq = 125,
         fuelwarninglevel=25,
         racetrack = {
             front = 90,
@@ -416,7 +416,7 @@ CoalitionSquadrons = {
         bordersgroup = 'Iran',
         takeofftype = AI_A2A_DISPATCHER.Takeoff.Cold,
         landingtype = AI_A2A_DISPATCHER.Landing.AtEngineShutdown,
-        detectionprefixarray = {'EWR IRAN'},
+        detectionprefixarray = {'EWR_IRAN'},
         AwacsTemplateName = 'A50_template',
         groupingrange = 30000,
         engageradius = 150000,
@@ -425,7 +425,7 @@ CoalitionSquadrons = {
         fuelthreshold = 0.25,
         cappatrolpersquadron = 1,
         defaultpatrolgrouping = 2,
-        debug = true,
+        debug = false,
         squadrons = {
             {
                 enable = true,
@@ -584,6 +584,111 @@ CoalitionSquadrons = {
                 capzone = 'CAPBandarEJask'
             }
         }
+    },
+    {
+        enable = true,
+        bordersgroup = 'UAE',
+        takeofftype = AI_A2A_DISPATCHER.Takeoff.Cold,
+        landingtype = AI_A2A_DISPATCHER.Landing.AtEngineShutdown,
+        detectionprefixarray = {'EWR_UAE'},
+        AwacsTemplateName = 'overlord-1',
+        groupingrange = 30000,
+        engageradius = 150000,
+        abortradius = 300000,
+        gciradius = 250000,
+        fuelthreshold = 0.25,
+        cappatrolpersquadron = 1,
+        defaultpatrolgrouping = 2,
+        debug = false,
+        squadrons = {
+            {
+                enable = true,
+                name = 'AlMinhadCAP1',
+                base = AIRBASE.PersianGulf.Al_Minhad_AB,
+                templatearray = {'M2K_template-1'},
+                numberofsplanes = 6,
+                availabilityrate = 0.6,
+                capzone = 'CAPKhaimah'
+            },
+            {
+                enable = true,
+                name = 'AlMinhadCAP2',
+                base = AIRBASE.PersianGulf.Al_Minhad_AB,
+                templatearray = {'M2K_template-1'},
+                numberofsplanes = 6,
+                availabilityrate = 0.6,
+                capzone = 'CAPFujairah'
+            },
+            {
+                enable = true,
+                name = 'AlMinhadCAP3',
+                base = AIRBASE.PersianGulf.Al_Minhad_AB,
+                templatearray = {'F16_template-1'},
+                numberofsplanes = 12,
+                availabilityrate = 0.7,
+                capzone = 'CAPMinhad'
+            },
+            {
+                enable = true,
+                name = 'AlDhafraCAP',
+                base = AIRBASE.PersianGulf.Al_Dhafra_AB,
+                templatearray = {'F16_template-1', 'M2K_template-1'},
+                numberofsplanes = 24,
+                availabilityrate = 0.65,
+                capzone = 'CAPDhafra'
+            },
+            {
+                enable = true,
+                name = 'AlDhafraIntercept',
+                base = AIRBASE.PersianGulf.Al_Dhafra_AB,
+                templatearray = {'M2K_template-1'},
+                numberofsplanes = 12,
+                availabilityrate = 0.6
+            },
+            {
+                enable = true,
+                name = 'AlMinhadIntercept',
+                base = AIRBASE.PersianGulf.Al_Minhad_AB,
+                templatearray = {'M2K_template-1'},
+                numberofsplanes = 12,
+                availabilityrate = 0.6
+            }
+        }
+    },
+    {
+        enable = true,
+        bordersgroup = 'oman',
+        takeofftype = AI_A2A_DISPATCHER.Takeoff.Cold,
+        landingtype = AI_A2A_DISPATCHER.Landing.AtEngineShutdown,
+        detectionprefixarray = {'EWR_OMAN'},
+        AwacsTemplateName = '',
+        groupingrange = 30000,
+        engageradius = 150000,
+        abortradius = 300000,
+        gciradius = 250000,
+        fuelthreshold = 0.25,
+        cappatrolpersquadron = 1,
+        defaultpatrolgrouping = 2,
+        debug = false,
+        squadrons = {
+            {
+                enable = true,
+                name = 'KhasabCAP',
+                base = AIRBASE.PersianGulf.Khasab,
+                templatearray = {'M2K_template-2'},
+                numberofsplanes = 12,
+                availabilityrate = 0.6,
+                capzonegroup = 'oman'
+            },
+            {
+                enable = true,
+                name = 'KhasabIntercept',
+                base = AIRBASE.PersianGulf.Khasab,
+                templatearray = {'M2K_template-2'},
+                numberofsplanes = 6,
+                availabilityrate = 0.8
+            }
+        }
     }
 }
 
@@ -595,6 +700,7 @@ IADSConfig = {
         EWRPrefix = 'EWR_IRAN_EST',
         SAMPrefix = 'SAM_IRAN_EST',
         CommandCenterGroup = 'HQ_IRAN_EST-1',
+        coalition = coalition.side.RED,
         interconnectionsconfig = {
             EWR = {
                 {
@@ -684,6 +790,7 @@ IADSConfig = {
         EWRPrefix = 'EWR_IRAN_NORD',
         SAMPrefix = 'SAM_IRAN_NORD',
         CommandCenterGroup = 'HQ_IRAN_NORD-1',
+        coalition = coalition.side.RED,
         interconnectionsconfig = {
             EWR = {
                 {
@@ -745,6 +852,7 @@ IADSConfig = {
         EWRPrefix = 'EWR_IRAN_OUEST',
         SAMPrefix = 'SAM_IRAN_OUEST',
         CommandCenterGroup = 'HQ_IRAN_OUEST-1',
+        coalition = coalition.side.RED,
         interconnectionsconfig = {
             EWR = {
                 {
@@ -853,6 +961,7 @@ IADSConfig = {
         EWRPrefix = 'EWR_IRAN_SUD',
         SAMPrefix = 'SAM_IRAN_SUD',
         CommandCenterGroup = 'HQ_IRAN_SUD-1',
+        coalition = coalition.side.RED,
         interconnectionsconfig = {
             EWR = {
                 {
@@ -909,6 +1018,164 @@ IADSConfig = {
             }
         },
         AwacsTemplateName = 'A50_template',
+        SAMRange = 75,
+        HARMDetectionChance = 45,
+        DetectInterval = 0
+    },
+    {
+        enable = true,
+        debug = false,
+        name = 'defense_UAE',
+        EWRPrefix = 'EWR_UAE',
+        SAMPrefix = 'SAM_UAE',
+        CommandCenterGroup = 'HQ_UAE-1',
+        coalition = coalition.side.BLUE,
+        interconnectionsconfig = {
+            EWR = {
+                {
+                    unitname = 'EWR_UAE-1-1',
+                    communicationstatic = 'IADSComm-14',
+                    powerstatic = 'IADSGPU-27',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-1'
+                },
+                {
+                    unitname = 'EWR_UAE-2-1',
+                    communicationstatic = 'IADSComm-13',
+                    powerstatic = 'IADSGPU-28',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-2'
+                },
+                {
+                    unitname = 'EWR_UAE-3-1',
+                    communicationstatic = '',
+                    powerstatic = 'IADSGPU-29',
+                    pointdefensegroupname = ''
+                },
+                {
+                    unitname = 'EWR_UAE-4-1',
+                    communicationstatic = 'IADSComm-15',
+                    powerstatic = 'IADSGPU-30',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-3'
+                },
+            },
+            SAM = {
+                {
+                    groupname = 'SAM_UAE-Patriot-1',
+                    communicationstatic = 'IADSComm-16',
+                    powerstatic = '',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-5',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_UAE-Patriot-2',
+                    communicationstatic = 'IADSComm-17',
+                    powerstatic = '',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-6',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_UAE_Hawk-1',
+                    communicationstatic = 'IADSComm-14',
+                    powerstatic = 'IADSGPU-33',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-7',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_UAE_Hawk-2',
+                    communicationstatic = 'IADSComm-13',
+                    powerstatic = 'IADSGPU-34',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-9',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_UAE_Hawk-3',
+                    communicationstatic = 'IADSComm-18',
+                    powerstatic = 'IADSGPU-32',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-8',
+                    isew = true
+                },
+                {
+                    groupname = 'SAM_UAE_MOBILE-1',
+                    communicationstatic = 'IADSComm-15',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_UAE_MOBILE-2',
+                    communicationstatic = 'IADSComm-15',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_UAE_MOBILE-3',
+                    communicationstatic = 'IADSComm-17',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                }
+            },
+            HQ = {
+                {
+                    groupname = 'HQ_UAE-1',
+                    communicationstatic = {
+                        'IADSComm-16'
+                    },
+                    powerstatic = 'IADSGPU-31',
+                    pointdefensegroupname = 'SAM_UAE_POINTDEF-4'
+                }
+            }
+        },
+        AwacsTemplateName = 'overlord-1',
+        SAMRange = 75,
+        HARMDetectionChance = 45,
+        DetectInterval = 0
+    },
+    {
+        enable = true,
+        debug = false,
+        name = 'defense_OMAN',
+        EWRPrefix = 'EWR_OMAN',
+        SAMPrefix = 'SAM_OMAN',
+        CommandCenterGroup = 'HQ_OMAN-1',
+        coalition = coalition.side.BLUE,
+        interconnectionsconfig = {
+            EWR = {
+                {
+                    unitname = 'EWR_OMAN-1-1',
+                    communicationstatic = 'IADSComm-19',
+                    powerstatic = 'IADSGPU-35',
+                    pointdefensegroupname = 'SAM_OMAN_MOBILE-3'
+                }
+            },
+            SAM = {
+                {
+                    groupname = 'SAM_OMAN_MOBILE-1',
+                    communicationstatic = 'IADSComm-21',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                },
+                {
+                    groupname = 'SAM_OMAN_MOBILE-2',
+                    communicationstatic = 'IADSComm-21',
+                    powerstatic = '',
+                    pointdefensegroupname = '',
+                    isew = false
+                }
+            },
+            HQ = {
+                {
+                    groupname = 'HQ_OMAN-1',
+                    communicationstatic = {
+                        'IADSComm-20'
+                    },
+                    powerstatic = '',
+                    pointdefensegroupname = 'SAM_OMAN_POINTDEF-1'
+                }
+            }
+        },
+        AwacsTemplateName = '',
         SAMRange = 75,
         HARMDetectionChance = 45,
         DetectInterval = 0

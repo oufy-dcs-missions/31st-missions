@@ -1,0 +1,5 @@
+AWACS :
+  - Darkstar: A-50
+    TCN:		100Y
+	freq:		Silver4
+

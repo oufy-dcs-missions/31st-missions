@@ -1352,7 +1352,7 @@ end
 
 --↓↓ AIRBOSS ↓↓-----------------------------------------------------------------------------------------------------------------------------------------------------
 local tanker =
-    RECOVERYTANKER:New(UNIT:FindByName('Anchor-Tankers'), '☮ YPF'):SetTakeoffCold():SetAltitude(
+    RECOVERYTANKER:New(UNIT:FindByName('Anchor-Tankers'), '☮ SHELL'):SetTakeoffCold():SetAltitude(
     Tanker_BOOM_Altitude
 ):SetSpeed(Tanker_BOOM_Speed):SetHomeBase(AIRBASE.Syria.Adana_Sakirpasa):SetRadio(264):SetModex(511):SetTACAN(24, 'SHL'):SetRacetrackDistances(
     50,
