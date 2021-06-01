@@ -18,12 +18,12 @@ enable_MissileTrainer = false
 enable_ExtraDamage = false
 enable_RescueHelos = true
 
-enable_AirTraffic = true
+enable_AirTraffic = false
 MAX_Air_Traffic_Planes = 7
 
 enable_CTDL = true
 --------
-enable_CSAR = false
+enable_CSAR = true
 CSAR_Time_Min = 300
 CSAR_Time_Max = 600
 --------

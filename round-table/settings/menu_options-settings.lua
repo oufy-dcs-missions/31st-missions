@@ -4,7 +4,7 @@
 --- DateTime: 15/11/2020 10:46
 --SET TRUE OR FALSE HERE TO ENABLE OR DISABLE MISSION FEATURES
 
-allow_EndMissionViaRadio = true
+allow_EndMissionViaRadio = false
 allow_CallSupportViaRadio = true
 allow_SpawnRedCAPs = true
 allow_ManualTaskCreation = true

@@ -1974,7 +1974,7 @@ EASY_CapPlanesLIST = {
     '☢ MiG-19P',
     '☢ MiG-23MLD',
     '☢ MiG-25PD',
-    '☢ Su-34',
+    --'☢ Su-34',
     '☢ F5E3',
     '☢ F-15C',
     '☢ F-18C',
@@ -1987,45 +1987,45 @@ EASY_CapPlanesLIST = {
 MEDIUM_CapPlanesLIST = {
     '☢ MiG-31_Med',
     '☢ MiG-29S_Med',
-    '☢ MiG-21Bis_Med',
+    --'☢ MiG-21Bis_Med',
     '☢ Su-27_Med',
     '☢ Su-33_Med',
-    '☢ MiG-19P_Med',
-    '☢ MiG-23MLD_Med',
+    --'☢ MiG-19P_Med',
+    --'☢ MiG-23MLD_Med',
     '☢ MiG-25PD_Med',
-    '☢ Su-34_Med',
-    '☢ F5E3_Med',
+    --'☢ Su-34_Med',
+    --'☢ F5E3_Med',
     '☢ F-15C_Med',
     '☢ F-18C_Med',
     '☢ F-14B_Med',
     '☢ JF-17_Med',
     '☢ J-11_Med',
-    '☢ Mirage 2000_Med'
+    --'☢ Mirage 2000_Med'
 }
 
 HARD_CapPlanesLIST = {
     '☢ MiG-31_Hard',
     '☢ MiG-29S_Hard',
-    '☢ MiG-21Bis_Hard',
+    --'☢ MiG-21Bis_Hard',
     '☢ Su-27_Hard',
     '☢ Su-33_Hard',
-    '☢ MiG-19P_Hard',
-    '☢ MiG-23MLD_Hard',
+    --'☢ MiG-19P_Hard',
+    --'☢ MiG-23MLD_Hard',
     '☢ MiG-25PD_Hard',
-    '☢ Su-34_Hard',
-    '☢ F5E3_Hard',
+    --'☢ Su-34_Hard',
+    --'☢ F5E3_Hard',
     '☢ F-15C_Hard',
     '☢ F-18C_Hard',
     '☢ F-14B_Hard',
     '☢ JF-17_Hard',
     '☢ J-11_Hard',
-    '☢ Mirage 2000_Hard'
+    --'☢ Mirage 2000_Hard'
 }
 
 function EASYCAP()
     EASY_CapSpawn =
         SPAWN:NewWithAlias('A2A_REDCAP_TEMPLATE', 'EASY CAP'):InitRandomizeTemplate(EASY_CapPlanesLIST):InitSkill(
-        'Average'
+        'Good'
     ):InitRandomizeRoute(1, 2, 20000):InitCleanUp(60):InitHeading(120, 180):InitLimit(4, 0)
     local REDRNG_CAP_ZONE = math.random(1, #(EnemyCAPZoneList))
     EASY_CapSpawn:SpawnInZone(EnemyCAPZoneList[REDRNG_CAP_ZONE], true, 5000, 10000)

@@ -25,7 +25,7 @@ AirBossConfig = {
             marshall = 134.00,
             lso = 126.5
         },
-        infintepatrol = true,
+        infintepatrol = false,
         controlarea = 50,
         recoverycase = 1,
         maxpatterns = 5,
@@ -421,7 +421,7 @@ CoalitionSquadrons = {
                 name = 'Abu_al_DuhurCAP',
                 base = AIRBASE.Syria.Abu_al_Duhur,
                 templatearray = {'Mig23_template-1'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.4,
                 capzone = 'CAPDuhur'
             },
@@ -430,7 +430,7 @@ CoalitionSquadrons = {
                 name = 'Al_QusayrCAP',
                 base = AIRBASE.Syria.Al_Qusayr,
                 templatearray = {'Mig21_template-1'},
-                numberofsplanes = 10,
+                numberofsplanes = 100,
                 availabilityrate = 0.4,
                 capzone = 'CAPBassel'
             },
@@ -439,7 +439,7 @@ CoalitionSquadrons = {
                 name = 'Al_QusayrIntercept1',
                 base = AIRBASE.Syria.Al_Qusayr,
                 templatearray = {'Mig21_template-1'},
-                numberofsplanes = 8,
+                numberofsplanes = 80,
                 availabilityrate = 0.5
             },
             {
@@ -447,7 +447,7 @@ CoalitionSquadrons = {
                 name = 'An_NasiriyahCAP',
                 base = AIRBASE.Syria.An_Nasiriyah,
                 templatearray = {'Mig23_template-1'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.4,
                 capzone = 'CAPDumayr'
             },
@@ -456,7 +456,7 @@ CoalitionSquadrons = {
                 name = 'An_NasiriyahIntercept',
                 base = AIRBASE.Syria.An_Nasiriyah,
                 templatearray = {'Mig23_template-1'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.4
             },
             {
@@ -464,7 +464,7 @@ CoalitionSquadrons = {
                 name = 'KhalkhalahIntercept',
                 base = AIRBASE.Syria.Khalkhalah,
                 templatearray = {'Mig25_template-1','Mig21_template-1'},
-                numberofsplanes = 24,
+                numberofsplanes = 240,
                 availabilityrate = 0.4
             },
             {
@@ -472,7 +472,7 @@ CoalitionSquadrons = {
                 name = 'KhalkhalahCAP',
                 base = AIRBASE.Syria.Khalkhalah,
                 templatearray = {'Mig25_template-1'},
-                numberofsplanes = 8,
+                numberofsplanes = 80,
                 availabilityrate = 0.6,
                 capzone = 'CAPPalmyre'
             },
@@ -481,7 +481,7 @@ CoalitionSquadrons = {
                 name = 'Al_DumayrIntercept1',
                 base = AIRBASE.Syria.Al_Dumayr,
                 templatearray = {'Mig23_template-1'},
-                numberofsplanes = 10,
+                numberofsplanes = 100,
                 availabilityrate = 0.4
             },
             {
@@ -489,7 +489,7 @@ CoalitionSquadrons = {
                 name = 'HamaIntercept',
                 base = AIRBASE.Syria.Hama,
                 templatearray = {'Mig21_template-1'},
-                numberofsplanes = 10,
+                numberofsplanes = 100,
                 availabilityrate = 0.4
             },
             {
@@ -497,7 +497,7 @@ CoalitionSquadrons = {
                 name = 'Marj_as_Sultan_SouthIntercept',
                 base = AIRBASE.Syria.Marj_as_Sultan_South,
                 templatearray = {'Mig25_template-1','Mig23_template-1'},
-                numberofsplanes = 16,
+                numberofsplanes = 160,
                 availabilityrate = 0.4
             },
             {
@@ -505,7 +505,7 @@ CoalitionSquadrons = {
                 name = 'Al_DumayrIntercept2',
                 base = AIRBASE.Syria.Al_Dumayr,
                 templatearray = {'Mig29_template-1'},
-                numberofsplanes = 24,
+                numberofsplanes = 240,
                 availabilityrate = 0.4
             },
             {
@@ -513,7 +513,7 @@ CoalitionSquadrons = {
                 name = 'Al_QusayrIntercept2',
                 base = AIRBASE.Syria.Al_Qusayr,
                 templatearray = {'Mig23_template-1'},
-                numberofsplanes = 8,
+                numberofsplanes = 80,
                 availabilityrate = 0.4
             },
             {
@@ -521,7 +521,7 @@ CoalitionSquadrons = {
                 name = 'TabqaCAP1',
                 base = AIRBASE.Syria.Tabqa,
                 templatearray = {'Mig21_template-1'},
-                numberofsplanes = 6,
+                numberofsplanes = 60,
                 availabilityrate = 0.7,
                 capzone = 'CAPJira'
             },
@@ -530,7 +530,7 @@ CoalitionSquadrons = {
                 name = 'TabqaCAP2',
                 base = AIRBASE.Syria.Tabqa,
                 templatearray = {'Mig21_template-1'},
-                numberofsplanes = 6,
+                numberofsplanes = 60,
                 availabilityrate = 0.8,
                 capzone = 'CAPAlep'
             }
@@ -557,7 +557,7 @@ CoalitionSquadrons = {
                 name = 'Ramat_DavidCAP1',
                 base = AIRBASE.Syria.Ramat_David,
                 templatearray = {'F16_template-1'},
-                numberofsplanes = 8,
+                numberofsplanes = 80,
                 availabilityrate = 0.7,
                 capzone = 'CAPRamat'
             },
@@ -566,7 +566,7 @@ CoalitionSquadrons = {
                 name = 'Ramat_DavidIntercept',
                 base = AIRBASE.Syria.Ramat_David,
                 templatearray = {'F15_template-1'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.8
             }
         }
@@ -592,7 +592,7 @@ CoalitionSquadrons = {
                 name = 'Ramat_DavidCAP2',
                 base = AIRBASE.Syria.Ramat_David,
                 templatearray = {'F16_template-1'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.7,
                 capzone = 'CAPBeyrouth'
             },
@@ -601,7 +601,7 @@ CoalitionSquadrons = {
                 name = 'HaifaCAP',
                 base = AIRBASE.Syria.Haifa,
                 templatearray = {'F16_template-1'},
-                numberofsplanes = 8,
+                numberofsplanes = 80,
                 availabilityrate = 0.7,
                 capzone = 'CAPMouawad'
             },
@@ -610,7 +610,7 @@ CoalitionSquadrons = {
                 name = 'HaifaIntercept',
                 base = AIRBASE.Syria.Haifa,
                 templatearray = {'F15_template-1'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.8
             }
         }
@@ -636,7 +636,7 @@ CoalitionSquadrons = {
                 name = 'IncirlikCAP1',
                 base = AIRBASE.Syria.Incirlik,
                 templatearray = {'F4_template-1','F16_template-3'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.6,
                 capzone = 'CAPIncirlik'
             },
@@ -645,7 +645,7 @@ CoalitionSquadrons = {
                 name = 'IncirlikCAP2',
                 base = AIRBASE.Syria.Incirlik,
                 templatearray = {'F16_template-2','F15_template-3'},
-                numberofsplanes = 12,
+                numberofsplanes = 120,
                 availabilityrate = 0.5,
                 capzone = 'CAPGaz'
             },
@@ -654,7 +654,7 @@ CoalitionSquadrons = {
                 name = 'IncirlikIntercept',
                 base = AIRBASE.Syria.Incirlik,
                 templatearray = {'F4_template-1','F16_template-3','F16_template-2','F15_template-3'},
-                numberofsplanes = 24,
+                numberofsplanes = 240,
                 availabilityrate = 0.8
             }
         }
@@ -880,3 +880,4 @@ IADSConfig = {
         DetectInterval = 0
     }
 }
+
