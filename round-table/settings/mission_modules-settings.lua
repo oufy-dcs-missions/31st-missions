@@ -23,7 +23,7 @@ MAX_Air_Traffic_Planes = 7
 
 enable_CTDL = true
 --------
-enable_CSAR = true
+enable_CSAR = false
 CSAR_Time_Min = 300
 CSAR_Time_Max = 600
 --------

@@ -1,0 +1,227 @@
+dictionary = 
+{
+    ["DictKey_WptName_1209"] = "",
+    ["DictKey_WptName_1228"] = "",
+    ["DictKey_UnitName_67"] = "CVN-72 Abraham Lincoln - F/A-18C 3 4",
+    ["DictKey_UnitName_1085"] = "",
+    ["DictKey_UnitName_1449"] = "DELTA Force - Shaike Ophir",
+    ["DictKey_WptName_1223"] = "",
+    ["DictKey_WptName_1389"] = "",
+    ["DictKey_WptName_795"] = "",
+    ["DictKey_WptName_1067"] = "",
+    ["DictKey_WptName_1031"] = "",
+    ["DictKey_WptName_127"] = "",
+    ["DictKey_WptName_1312"] = "",
+    ["DictKey_UnitName_1253"] = "Paris Command Post",
+    ["DictKey_WptName_114"] = "",
+    ["DictKey_WptName_898"] = "",
+    ["DictKey_WptName_1043"] = "",
+    ["DictKey_WptName_899"] = "",
+    ["DictKey_UnitName_1060"] = "",
+    ["DictKey_WptName_123"] = "",
+    ["DictKey_WptName_786"] = "",
+    ["DictKey_WptName_1058"] = "",
+    ["DictKey_UnitName_797"] = "",
+    ["DictKey_UnitName_1263"] = "Paris - Mi-8MTV2 2",
+    ["DictKey_sortie_5"] = "Operation Scarlet Dawn By Surrexen",
+    ["DictKey_GroupName_1444"] = "DELTA Force",
+    ["DictKey_WptName_1385"] = "",
+    ["DictKey_GroupName_1575"] = "Shayetet 13",
+    ["DictKey_WptName_1381"] = "",
+    ["DictKey_UnitName_66"] = "CVN-72 Abraham Lincoln - F/A-18C 3 3",
+    ["DictKey_UnitName_1448"] = "DELTA Force - Jerry Weinstock",
+    ["DictKey_WptName_1414"] = "",
+    ["DictKey_WptName_1237"] = "",
+    ["DictKey_WptName_536"] = "",
+    ["DictKey_UnitName_1446"] = "DELTA Force - Lee Marvin",
+    ["DictKey_UnitName_785"] = "",
+    ["DictKey_UnitName_1311"] = "",
+    ["DictKey_UnitName_1066"] = "",
+    ["DictKey_WptName_53"] = "",
+    ["DictKey_UnitName_1576"] = "Shayetet 13 1",
+    ["DictKey_WptName_846"] = "",
+    ["DictKey_WptName_1410"] = "",
+    ["DictKey_WptName_1422"] = "",
+    ["DictKey_descriptionRedTask_2"] = "",
+    ["DictKey_WptName_1377"] = "",
+    ["DictKey_UnitName_1568"] = "USACE 2nd Squad 5",
+    ["DictKey_UnitName_1039"] = "Latakia - Naval Warehouse",
+    ["DictKey_WptName_792"] = "",
+    ["DictKey_WptName_1406"] = "",
+    ["DictKey_WptName_1251"] = "",
+    ["DictKey_WptName_1240"] = "",
+    ["DictKey_WptName_1073"] = "",
+    ["DictKey_UnitName_1578"] = "Shayetet 13 3",
+    ["DictKey_WptName_1049"] = "",
+    ["DictKey_UnitName_788"] = "",
+    ["DictKey_UnitName_1258"] = "Paris - Ka-50 2",
+    ["DictKey_WptName_1213"] = "",
+    ["DictKey_WptName_121"] = "",
+    ["DictKey_WptName_1034"] = "",
+    ["DictKey_WptName_1369"] = "",
+    ["DictKey_WptName_116"] = "",
+    ["DictKey_UnitName_791"] = "",
+    ["DictKey_WptName_1264"] = "",
+    ["DictKey_WptName_1361"] = "",
+    ["DictKey_WptName_132"] = "",
+    ["DictKey_UnitName_794"] = "",
+    ["DictKey_WptName_122"] = "",
+    ["DictKey_UnitName_1063"] = "Masyaf - Weapons Hangar South",
+    ["DictKey_WptName_1450"] = "DELTA Force",
+    ["DictKey_UnitName_1453"] = "",
+    ["DictKey_GroupName_1563"] = "USACE 2nd Squad",
+    ["DictKey_WptName_1579"] = "Shayetet 13",
+    ["DictKey_UnitName_1042"] = "Latakia - Naval Warehouse",
+    ["DictKey_UnitName_1036"] = "Al Safirah - Barracks",
+    ["DictKey_UnitName_1565"] = "USACE 2nd Squad 2",
+    ["DictKey_WptName_789"] = "",
+    ["DictKey_WptName_115"] = "",
+    ["DictKey_UnitName_1564"] = "USACE 2nd Squad 1",
+    ["DictKey_ActionText_1624"] = "",
+    ["DictKey_WptName_1052"] = "",
+    ["DictKey_UnitName_1033"] = "Al Safirah - Barracks",
+    ["DictKey_UnitName_1227"] = "London - Mi-8MTV2 2",
+    ["DictKey_WptName_64"] = "CVN-72 Abraham Lincoln - F/A-18C 3",
+    ["DictKey_WptName_1254"] = "",
+    ["DictKey_UnitName_1069"] = "",
+    ["DictKey_WptName_1070"] = "",
+    ["DictKey_descriptionText_1"] = "Opération Scarlet Dawn de Surrexen\
+\
+Guerre! La situation en Syrie s'est rapidement détériorée. Le Président Bachar al-Assad et les forces de la République arabe syrienne se sont lancées dans une action imprévue et ont envahi le territoire libanais, et se mobilisent rapidement pour conquérir davantage de terrain. Ce qui est encore plus affligeant, c'est que tant la Fédération de Russie que la République islamique d'Iran semblent se joindre à la République arabe syrienne dans leurs actes d'agression.\
+\
+Le président des États-Unis a ordonné à l'USAF et à l'USN de répondre à la menace et de maîtriser la situation. Les Israéliens se préparent à nous rejoindre dans des contre-opérations. Rendez-vous à vos avions, d'autres tâches suivront...\
+\
+L'opération Scarlet Dawn est sur le point de commencer...\
+\
+Phase 1 - Sécuriser la Turquie et Israël\
+\
+Capturez et maintenez les bases aériennes de la Turquie et d'Israël. Protégez nos transports pendant qu'ils déploient des troupes dans la région.\
+\
+Phase 2 - Sécuriser le Liban et la Jordanie\
+\
+Capturez et maintenez les bases aériennes du Liban et de la Jordanie. Protégez nos transports pendant qu'ils déploient des troupes dans la région.\
+\
+Phase 3 - Occupation de la Syrie\
+\
+Capturez et maintenez les bases aériennes du nord et du centre de la Syrie.\
+\
+Phase 4 - Invasion de Damas\
+\
+Envahissez la capitale syrienne de Damas et capturez les bases aériennes autour de la ville. Faites-leur payer pour leurs transgressions.\
+\
+Atouts tactiques comme suit...\
+\
+AWACS\
+\
+Darkstar - E-3A\
+Frequency: 266.000 MHz AM\
+\
+Overlord - E-2D\
+Frequency: 265.000 MHz AM\
+\
+Carrier Strike Group\
+\
+CVN-72 Abraham Lincoln\
+Frequency: 127.500 MHz AM\
+TCN: 72X\
+ICLS: 7\
+\
+CV-59 Forrestal\
+Frequency: 128.500 MHz AM\
+TCN: 59X\
+ICLS: 5\
+\
+Refuelling\
+\
+Texaco - KC-135MPRS\
+Frequency: 267 MHz AM\
+TCN: 13Y\
+\
+Shell - KC-135\
+Frequency: 268 MHz AM\
+TCN: 14Y\
+\
+Arco - S-3B\
+Frequency: 238 MHz AM\
+TCN: 38Y\
+\
+Aerial JTAC\
+\
+Pontiac-9-1 - MQ-9 Reaper Aerial Drone\
+Frequency: 272 Mhz AM\
+\
+FARPS\
+\
+London: 101 Mhz AM\
+Paris: 102 Mhz AM\
+\
+Soyez avisé que les appels Bullseye font référence à la station Al Qadmous à Marqueh, en Syrie, juste au nord de Tartus. ",
+    ["DictKey_UnitName_1250"] = "",
+    ["DictKey_WptName_54"] = "",
+    ["DictKey_WptName_1086"] = "",
+    ["DictKey_UnitName_1447"] = "DELTA Force - Steve James",
+    ["DictKey_WptName_1064"] = "",
+    ["DictKey_UnitName_1048"] = "",
+    ["DictKey_UnitName_1239"] = "",
+    ["DictKey_UnitName_1222"] = "London - Ka-50 2",
+    ["DictKey_UnitName_1057"] = "",
+    ["DictKey_WptName_1037"] = "",
+    ["DictKey_UnitName_1566"] = "USACE 2nd Squad 3",
+    ["DictKey_UnitName_776"] = "",
+    ["DictKey_WptName_264"] = "",
+    ["DictKey_WptName_1269"] = "",
+    ["DictKey_WptName_120"] = "",
+    ["DictKey_UnitName_1054"] = "",
+    ["DictKey_WptName_1373"] = "",
+    ["DictKey_UnitName_63"] = "CVN-72 Abraham Lincoln - F/A-18C 3 1",
+    ["DictKey_WptName_897"] = "",
+    ["DictKey_WptName_798"] = "",
+    ["DictKey_UnitName_782"] = "",
+    ["DictKey_UnitName_1212"] = "",
+    ["DictKey_WptName_68"] = "",
+    ["DictKey_WptName_783"] = "",
+    ["DictKey_WptName_134"] = "",
+    ["DictKey_WptName_896"] = "",
+    ["DictKey_WptName_435"] = "",
+    ["DictKey_WptName_1569"] = "USACE 2nd Squad",
+    ["DictKey_WptName_1234"] = "",
+    ["DictKey_WptName_1365"] = "",
+    ["DictKey_WptName_1040"] = "",
+    ["DictKey_UnitName_1051"] = "Alsqublh - Barracks",
+    ["DictKey_UnitName_1236"] = "",
+    ["DictKey_WptName_128"] = "",
+    ["DictKey_WptName_611"] = "",
+    ["DictKey_WptName_133"] = "",
+    ["DictKey_UnitName_1233"] = "London - UH-1H 2",
+    ["DictKey_WptName_1402"] = "",
+    ["DictKey_WptName_814"] = "",
+    ["DictKey_WptName_1193"] = "",
+    ["DictKey_UnitName_1045"] = "Latakia - Naval Warehouse",
+    ["DictKey_WptName_706"] = "",
+    ["DictKey_WptName_1259"] = "",
+    ["DictKey_UnitName_1030"] = "",
+    ["DictKey_WptName_1055"] = "",
+    ["DictKey_WptName_1061"] = "",
+    ["DictKey_WptName_1243"] = "",
+    ["DictKey_GroupName_62"] = "CVN-72 Abraham Lincoln - F/A-18C 3",
+    ["DictKey_WptName_1138"] = "",
+    ["DictKey_WptName_55"] = "",
+    ["DictKey_UnitName_1268"] = "Paris - UH-1H 2",
+    ["DictKey_UnitName_779"] = "",
+    ["DictKey_UnitName_1242"] = "",
+    ["DictKey_WptName_777"] = "",
+    ["DictKey_UnitName_1577"] = "Shayetet 13 2",
+    ["DictKey_UnitName_65"] = "CVN-72 Abraham Lincoln - F/A-18C 3 2",
+    ["DictKey_descriptionBlueTask_3"] = "",
+    ["DictKey_UnitName_1072"] = "",
+    ["DictKey_WptName_1454"] = "",
+    ["DictKey_WptName_1418"] = "",
+    ["DictKey_WptName_780"] = "",
+    ["DictKey_descriptionNeutralsTask_4"] = "",
+    ["DictKey_UnitName_1445"] = "DELTA Force - Chuck Norris",
+    ["DictKey_WptName_51"] = "",
+    ["DictKey_WptName_1229"] = "",
+    ["DictKey_WptName_1046"] = "",
+    ["DictKey_WptName_52"] = "",
+    ["DictKey_UnitName_1567"] = "USACE 2nd Squad 4",
+} -- end of dictionary
